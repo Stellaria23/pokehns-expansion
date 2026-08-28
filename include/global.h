@@ -1318,6 +1318,7 @@ struct SaveBlock1
 #endif
 #if IS_HNS
     struct MomSavingsData momSavings;
+    u16 effortPoints;
 #endif
     // sizeof: 0x3???
 };
