@@ -1,5 +1,6 @@
 #include "global.h"
 #include "graphics.h"
+#include "config/effort.h"
 
 #if IS_HNS
 const u32 gBattleTextboxTiles[] = INCBIN_U32("graphics/battle_interface/hns/textbox.4bpp.smol");
@@ -2039,6 +2040,10 @@ const u16 gPokenavMessageBox_Pal[] = INCBIN_U16("graphics/pokenav/message.gbapal
 const u32 gPokenavMessageBox_Gfx[] = INCBIN_U32("graphics/pokenav/message.4bpp.smol");
 #endif
 const u32 gPokenavMessageBox_Tilemap[] = INCBIN_U32("graphics/pokenav/message.bin.smolTM");
+
+const u16 gPokenavMessageBox_Pal_EP[] = INCBIN_U16("graphics/pokenav/message_ep.gbapal");
+const u32 gPokenavMessageBox_Gfx_EP[] = INCBIN_U32("graphics/pokenav/message_ep.4bpp.smol");
+const u32 gPokenavMessageBox_Tilemap_EP[] = INCBIN_U32("graphics/pokenav/message_ep.bin.smolTM");
 
 const u16 gRegionMapCityZoomTiles_Pal[] = INCBIN_U16("graphics/pokenav/region_map/zoom_tiles.gbapal");
 const u32 gRegionMapCityZoomText_Gfx[] = INCBIN_U32("graphics/pokenav/region_map/city_zoom_text.4bpp.smol");

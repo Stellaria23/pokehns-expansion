@@ -76,6 +76,8 @@
 #include "constants/trainers.h"
 #include "constants/union_room.h"
 #include "constants/weather.h"
+#include "effort_points.h"
+#include "config/effort.h"
 
 extern u16 gSpecialVar_ItemId;
 
@@ -7901,8 +7903,11 @@ void MonGainEVs(struct Pokemon *mon, u16 defeatedSpecies)
 
         evs[i] += evIncrease;
         totalEVs += evIncrease;
-        SetMonData(mon, MON_DATA_HP_EV + i, &evs[i]);
+        //disable EV gain altogether
+        if(!EP_MODE_ENABLED) SetMonData(mon, MON_DATA_HP_EV + i, &evs[i]);
     }
+    //increase effort points by one
+    if(EP_MODE_ENABLED) AddEffort_Points(1);
 }
 
 u16 GetMonEVCount(struct Pokemon *mon)

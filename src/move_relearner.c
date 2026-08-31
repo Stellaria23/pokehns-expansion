@@ -32,6 +32,8 @@
 #include "constants/songs.h"
 #include "data/pokemon/egg_moves.h"
 #include "data/tutor_moves.h"
+#include "config/effort.h"
+#include "effort_points.h"
 
 /*
  * Move relearner state machine
@@ -151,6 +153,15 @@
 #define MENU_STATE_PRINT_TEXT_THEN_FANFARE 31
 #define MENU_STATE_WAIT_FOR_FANFARE 32
 #define MENU_STATE_WAIT_FOR_A_BUTTON 33
+
+#define MENU_STATE_PRINT_EP_COST 34
+#define MENU_STATE_WAIT_FOR_EP_COST 35
+#define MENU_STATE_PRINT_NOT_ENOUGH_EP 36
+#define MENU_STATE_WAIT_NOT_ENOUGH_EP 37
+#define MENU_STATE_NOT_ENOUGH_EP_WAIT_FOR_A_BUTTON 38
+#define MENU_STATE_PRINT_EP_MOVE_CONFIRM 39
+
+#define MOVE_EP_COST 25
 
 // The different versions of hearts are selected using animation
 // commands.
@@ -582,7 +593,8 @@ static void DoMoveRelearnerMain(void)
         if (!MoveRelearnerRunTextPrinters())
         {
             MoveRelearnerCreateYesNoMenu();
-            sMoveRelearnerStruct->state++;
+            if(EP_MODE_ENABLED) {sMoveRelearnerStruct->state = MENU_STATE_PRINT_EP_MOVE_CONFIRM;}
+            else {sMoveRelearnerStruct->state++;}
         }
         break;
     case MENU_STATE_TEACH_MOVE_CONFIRM:
@@ -596,7 +608,11 @@ static void DoMoveRelearnerMain(void)
                     boxmon = GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos);
                 else
                     boxmon = &(gPlayerParty[sMoveRelearnerStruct->partyMon].box);
-                if (GiveMoveToBoxMon(boxmon, GetCurrentSelectedMove()) != MON_HAS_MAX_MOVES)
+                if(EP_MODE_ENABLED && GetEffort_Points() < MOVE_EP_COST)
+                {
+                    sMoveRelearnerStruct->state = MENU_STATE_PRINT_NOT_ENOUGH_EP;
+                }
+                else if (GiveMoveToBoxMon(boxmon, GetCurrentSelectedMove()) != MON_HAS_MAX_MOVES)
                 {
                     PrintMessageWithPlaceholders(gText_MoveRelearnerPkmnLearnedMove);
                     gSpecialVar_0x8004 = TRUE;
@@ -875,10 +891,68 @@ static void DoMoveRelearnerMain(void)
         if (JOY_NEW(A_BUTTON))
         {
             PlaySE(SE_SELECT);
+            TakeEffort_Points(MOVE_EP_COST);
             sMoveRelearnerStruct->state = MENU_STATE_FADE_AND_RETURN;
         }
         break;
+    case MENU_STATE_PRINT_EP_COST:
+        PrintMessageWithPlaceholders(gText_MoveRelearnerRequiresEP);
+        sMoveRelearnerStruct->state++;
+        break;
+    case MENU_STATE_WAIT_FOR_EP_COST:
+        if (!MoveRelearnerRunTextPrinters())
+        {
+            MoveRelearnerCreateYesNoMenu();
+            sMoveRelearnerStruct->state = MENU_STATE_TEACH_MOVE_CONFIRM;
+        }
+        break;
+    case MENU_STATE_PRINT_NOT_ENOUGH_EP:
+        PrintMessageWithPlaceholders(gText_MoveRelearnerNotEnoughEP);
+        sMoveRelearnerStruct->state = MENU_STATE_WAIT_NOT_ENOUGH_EP;
+        break;
+    case MENU_STATE_WAIT_NOT_ENOUGH_EP:
+        if (!MoveRelearnerRunTextPrinters())
+        {
+            sMoveRelearnerStruct->state = MENU_STATE_NOT_ENOUGH_EP_WAIT_FOR_A_BUTTON;
+        }
+        break;
+    case MENU_STATE_NOT_ENOUGH_EP_WAIT_FOR_A_BUTTON:
+        if (JOY_NEW(A_BUTTON))
+        {
+            if (sMoveRelearnerMenuState.showContestInfo == FALSE)
+            {
+                sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
+            }
+            else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
+            {
+                sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
+            }
+        }
+        break;
+    case MENU_STATE_PRINT_EP_MOVE_CONFIRM:
+        {
+            s8 selection = Menu_ProcessInputNoWrapClearOnChoose();
+
+            if (selection == 0)
+            {
+                sMoveRelearnerStruct->state = MENU_STATE_PRINT_EP_COST;
+            }
+            else if (selection == MENU_B_PRESSED || selection == 1)
+            {
+                if (sMoveRelearnerMenuState.showContestInfo == FALSE)
+                {
+                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_BATTLE_MODE;
+                }
+                else if (sMoveRelearnerMenuState.showContestInfo == TRUE)
+                {
+                    sMoveRelearnerStruct->state = MENU_STATE_SETUP_CONTEST_MODE;
+                }
+            }
+        }
+        break;
     }
+    
+    
 }
 
 static void FreeMoveRelearnerResources(void)

@@ -652,6 +652,8 @@ extern const u8 gText_MoveRelearnerAccuracy[];
 extern const u8 gText_MoveRelearnerContestMovesTitle[];
 extern const u8 gText_MoveRelearnerAppeal[];
 extern const u8 gText_MoveRelearnerJam[];
+extern const u8 gText_MoveRelearnerRequiresEP[];
+extern const u8 gText_MoveRelearnerNotEnoughEP[];
 
 extern const u8 gText_DadsAdvice[];
 extern const u8 gText_PlayerUsedVar2[];

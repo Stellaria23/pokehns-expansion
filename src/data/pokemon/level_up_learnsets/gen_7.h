@@ -5111,9 +5111,9 @@ static const struct LevelUpMove sTyphlosionHisuiLevelUpLearnset[] = {
 static const struct LevelUpMove sTotodileLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
     LEVEL_UP_MOVE( 1, MOVE_LEER),
-    LEVEL_UP_MOVE( 6, MOVE_WATER_GUN),
-    LEVEL_UP_MOVE( 8, MOVE_RAGE),
-    LEVEL_UP_MOVE(13, MOVE_BITE),
+    LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
+    LEVEL_UP_MOVE( 1, MOVE_RAGE),
+    LEVEL_UP_MOVE( 6, MOVE_BITE),
     LEVEL_UP_MOVE(15, MOVE_SCARY_FACE),
     LEVEL_UP_MOVE(16, MOVE_BUBBLE_BEAM),
     LEVEL_UP_MOVE(20, MOVE_ICE_FANG),

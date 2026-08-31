@@ -13,10 +13,13 @@
 #include "gym_leader_rematch.h"
 #include "window.h"
 #include "strings.h"
+#include "string_util.h"
 #include "scanline_effect.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
 #include "event_data.h"
+#include "effort_points.h"
+#include "config/effort.h"
 
 #define GFXTAG_BLUE_LIGHT 1
 #define GFXTAG_OPTIONS    3
@@ -41,6 +44,7 @@ struct Pokenav_MenuGfx
     bool32 (*isTaskActiveCB)(void);
     u32 loopedTaskId;
     u16 optionDescWindowId;
+    u16 EPWindowId;
     u8 bg3ScrollTaskId;
     u8 cursorPos;
     u8 numIconsBlending;
@@ -82,7 +86,9 @@ static void CreateMatchCallBlueLightSprite(void);
 static void SpriteCB_BlinkingBlueLight(struct Sprite *);
 static void DestroyRematchBlueLightSprite(void);
 static void AddOptionDescriptionWindow(void);
+static void AddEPWindow(void);
 static void PrintCurrentOptionDescription(void);
+static void PrintCurrentEP(void);
 static void PrintNoRibbonWinners(void);
 static bool32 IsDma3ManagerBusyWithBgCopy_(void);
 static void CreateMovingBgDotsTask(void);
@@ -322,6 +328,7 @@ struct
     },
 };
 
+//Already in the code
 static const struct WindowTemplate sOptionDescWindowTemplate =
 {
     .bg = 1,
@@ -331,6 +338,18 @@ static const struct WindowTemplate sOptionDescWindowTemplate =
     .height = 2,
     .paletteNum = 1,
     .baseBlock = 8
+};
+
+// custom made
+static const struct WindowTemplate sEPWindowTemplate =
+{
+    .bg = 1,
+    .tilemapLeft = 5,
+    .tilemapTop = 8,
+    .width = 6,
+    .height = 3,
+    .paletteNum = 1,
+    .baseBlock = 56,
 };
 
 #if IS_HNS
@@ -507,6 +526,7 @@ void FreeMenuHandlerSubstruct2(void)
 
     DestroyMovingDotsBgTask();
     RemoveWindow(gfx->optionDescWindowId);
+    if(EP_MODE_ENABLED) RemoveWindow(gfx->EPWindowId);
     FreeAndDestroyMainMenuSprites();
     DestroyMenuOptionGlowTask();
     FreePokenavSubstruct(POKENAV_SUBSTRUCT_MENU_GFX);
@@ -527,11 +547,32 @@ static u32 LoopedTask_OpenMenu(s32 state)
     {
     case 0:
         InitBgTemplates(sPokenavMainMenuBgTemplates, ARRAY_COUNT(sPokenavMainMenuBgTemplates));
-        DecompressAndCopyTileDataToVram(1, gPokenavMessageBox_Gfx, 0, 0, 0);
+        if(EP_MODE_ENABLED) 
+        {
+            DecompressAndCopyTileDataToVram(1, gPokenavMessageBox_Gfx_EP, 0, 0, 0);
+        }
+        else 
+        {
+            DecompressAndCopyTileDataToVram(1, gPokenavMessageBox_Gfx, 0, 0, 0);
+        }
         SetBgTilemapBuffer(1, gfx->bg1TilemapBuffer);
-        CopyToBgTilemapBuffer(1, gPokenavMessageBox_Tilemap, 0, 0);
+        if(EP_MODE_ENABLED)
+        {
+            CopyToBgTilemapBuffer(1, gPokenavMessageBox_Tilemap_EP, 0, 0);
+        }
+        else
+        {
+            CopyToBgTilemapBuffer(1, gPokenavMessageBox_Tilemap, 0, 0);
+        }
         CopyBgTilemapBufferToVram(1);
-        CopyPaletteIntoBufferUnfaded(gPokenavMessageBox_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+        if(EP_MODE_ENABLED)
+        {
+            CopyPaletteIntoBufferUnfaded(gPokenavMessageBox_Pal_EP, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+        }
+        else
+        {
+            CopyPaletteIntoBufferUnfaded(gPokenavMessageBox_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+        }
         ChangeBgX(1, 0, BG_COORD_SET);
         ChangeBgY(1, 0, BG_COORD_SET);
         ChangeBgX(2, 0, BG_COORD_SET);
@@ -559,6 +600,7 @@ static u32 LoopedTask_OpenMenu(s32 state)
         if (FreeTempTileDataBuffersIfPossible())
             return LT_PAUSE;
         AddOptionDescriptionWindow();
+        if(EP_MODE_ENABLED) AddEPWindow();
         CreateMovingBgDotsTask();
         return LT_INC_AND_CONTINUE;
     case 4:
@@ -566,6 +608,7 @@ static u32 LoopedTask_OpenMenu(s32 state)
         return LT_INC_AND_CONTINUE;
     case 5:
         PrintCurrentOptionDescription();
+        if(EP_MODE_ENABLED) PrintCurrentEP();
         CreateMenuOptionSprites();
         CreateMatchCallBlueLightSprite();
         DrawCurrentMenuOptionLabels();
@@ -1288,6 +1331,7 @@ static void SpriteCB_BlinkingBlueLight(struct Sprite *sprite)
     }
 }
 
+//Already in the code
 static void AddOptionDescriptionWindow(void)
 {
     struct Pokenav_MenuGfx *gfx = GetSubstructPtr(POKENAV_SUBSTRUCT_MENU_GFX);
@@ -1296,6 +1340,17 @@ static void AddOptionDescriptionWindow(void)
     PutWindowTilemap(gfx->optionDescWindowId);
     FillWindowPixelBuffer(gfx->optionDescWindowId, PIXEL_FILL(6));
     CopyWindowToVram(gfx->optionDescWindowId, COPYWIN_FULL);
+}
+
+//Custom made
+static void AddEPWindow(void)
+{
+    struct Pokenav_MenuGfx *gfx = GetSubstructPtr(POKENAV_SUBSTRUCT_MENU_GFX);
+
+    gfx->EPWindowId = AddWindow(&sEPWindowTemplate);
+    PutWindowTilemap(gfx->EPWindowId);
+    FillWindowPixelBuffer(gfx->EPWindowId, PIXEL_FILL(6));
+    CopyWindowToVram(gfx->EPWindowId, COPYWIN_FULL);
 }
 
 static void PrintCurrentOptionDescription(void)
@@ -1312,6 +1367,22 @@ static void PrintCurrentOptionDescription(void)
     u32 width = GetStringWidth(FONT_NORMAL, desc, -1);
     FillWindowPixelBuffer(gfx->optionDescWindowId, PIXEL_FILL(6));
     AddTextPrinterParameterized3(gfx->optionDescWindowId, FONT_NORMAL, (192 - width) / 2, 1, sOptionDescTextColors, 0, desc);
+}
+
+static void PrintCurrentEP(void)
+{
+    struct Pokenav_MenuGfx *gfx = GetSubstructPtr(POKENAV_SUBSTRUCT_MENU_GFX);
+    FillWindowPixelBuffer(gfx->EPWindowId, PIXEL_FILL(6));
+    //const u8 *desc = COMPOUND_STRING("EP");
+    //u32 width = GetStringWidth(FONT_NORMAL, desc, -1);
+    //AddTextPrinterParameterized3(gfx->EPWindowId, FONT_NORMAL, 8, 10, sOptionDescTextColors, 0, desc);
+    u8 EPTextBuffer[32];
+    StringCopy(EPTextBuffer, COMPOUND_STRING("EP: "));
+    u8 EPValueBuffer[8];
+    ConvertIntToDecimalStringN(EPValueBuffer, GetEffort_Points(), STR_CONV_MODE_LEFT_ALIGN, 3);
+    StringAppend(EPTextBuffer, EPValueBuffer);
+    AddTextPrinterParameterized3(gfx->EPWindowId, FONT_NORMAL, 6, 5, sOptionDescTextColors, 0, EPTextBuffer);
+
 }
 
 // Printed when Ribbons is selected if no PC/party mons have ribbons

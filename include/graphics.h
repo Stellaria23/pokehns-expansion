@@ -3574,6 +3574,10 @@ extern const u32 gPokenavMessageBox_Tilemap[];
 extern const u16 gPokenavMessageBox_Pal[];
 extern const u32 gPokenavOptions_Gfx[];
 extern const u16 gPokenavOptions_Pal[];
+extern const u16 gPokenavMessageBox_Pal_EP[];
+extern const u32 gPokenavMessageBox_Gfx_EP[];
+extern const u32 gPokenavMessageBox_Tilemap_EP[];
+
 
 // Battle Factory Screen
 extern const u16 gFrontierFactoryMenu_Gfx[34 * TILE_SIZE_4BPP / 2];
