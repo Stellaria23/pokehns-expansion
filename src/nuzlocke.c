@@ -149,6 +149,12 @@ static const u8 sNuzlockeLUT[] =
     [MAPSEC_ROUTE_50] = 0x6D,
     [MAPSEC_NEW_SINJOH] = 0x6E,
     [MAPSEC_SINJOH_RUINS] = 0x6F,
+    // More special
+    [MAPSEC_MYSTERY_KINDLE] = 0x70,
+    [MAPSEC_FISHER_NEST_HNS] = 0x71,
+    [MAPSEC_MYSTERY_BEACH] = 0x72,
+    [MAPSEC_MYSTERY_BRINK] = 0x73,
+    [MAPSEC_MYSTERY_BRIDGE] = 0x74,
     // Max bit index: 0x6F (112 bits). nuzlockeEncounterFlags[16] supports up to 0x7F (128 bits).
     // If you exceed 0x7F, grow nuzlockeEncounterFlags in include/global.h.
 

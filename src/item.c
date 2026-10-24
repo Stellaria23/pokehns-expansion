@@ -900,6 +900,21 @@ ItemUseFunc GetItemFieldFunc(enum Item itemId)
     return gItemsInfo[SanitizeItemId(itemId)].fieldUseFunc;
 }
 
+const u8 *ItemId_GetName(u16 itemId)
+{
+    return gItemsInfo[SanitizeItemId(itemId)].name;
+}
+
+u8 ItemId_GetPocket(u16 itemId)
+{
+    return gItemsInfo[SanitizeItemId(itemId)].pocket;
+}
+
+u8 GetPocketByItemId(u16 itemId)
+{
+    return ItemId_GetPocket(itemId);
+}
+
 // Returns an item's battle effect script ID.
 enum EffectItem GetItemBattleUsage(enum Item itemId)
 {

@@ -1949,6 +1949,7 @@ extern const u32 gItemIcon_Room2Key[];
 extern const u32 gItemIcon_Room4Key[];
 extern const u32 gItemIcon_Room6Key[];
 extern const u32 gItemIcon_AzureFlute[];
+extern const u32 gItemIcon_FishingMagnet[];
 extern const u16 gItemIconPalette_AzureFlute[];
 extern const u32 gItemIcon_GBPlayer[];
 extern const u16 gItemIconPalette_GBPlayer[];

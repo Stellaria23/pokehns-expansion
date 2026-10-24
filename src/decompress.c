@@ -21,6 +21,15 @@ static bool32 isModeLoEncoded(enum CompressionMode mode);
 static bool32 isModeSymEncoded(enum CompressionMode mode);
 static bool32 isModeSymDelta(enum CompressionMode mode);
 
+const u32 gMonFrontPic_OnixAlt[] = INCBIN_U32("graphics/pokemon/onix/crystal/anim_front.4bpp.smol");
+const u32 gMonBackPic_OnixAlt[] = INCBIN_U32("graphics/pokemon/onix/crystal/back.4bpp.smol");
+const u32 gMonFrontPic_PikachuAlt[] = INCBIN_U32("graphics/pokemon/pikachu/witch/anim_front.4bpp.smol");
+const u32 gMonBackPic_PikachuAlt[] = INCBIN_U32("graphics/pokemon/pikachu/witch/back.4bpp.smol");
+const u32 gMonFrontPic_FoongusSus[] = INCBIN_U32("graphics/pokemon/foongus/sus/anim_front.4bpp.smol");
+const u32 gMonBackPic_FoongusSus[] = INCBIN_U32("graphics/pokemon/foongus/sus/back.4bpp.smol");
+const u32 gMonFrontPic_AmoongussSus[] = INCBIN_U32("graphics/pokemon/amoonguss/sus/anim_front.4bpp.smol");
+const u32 gMonBackPic_AmoongussSus[] = INCBIN_U32("graphics/pokemon/amoonguss/sus/back.4bpp.smol");
+
 
 #define TABLE_READ_K(tableVal)((tableVal & 7))
 #define TABLE_READ_SYMBOL(tableVal)((tableVal & 0xFF) >> 3)
@@ -249,14 +258,14 @@ void DecompressPicFromTable(const struct CompressedSpriteSheet *src, void *buffe
     DecompressDataWithHeaderWram(src->data, buffer);
 }
 
-void HandleLoadSpecialPokePic(bool32 isFrontPic, void *dest, s32 species, u32 personality)
+void HandleLoadSpecialPokePic(bool32 isFrontPic, void *dest, s32 species, u32 personality, bool32 isShiny)
 {
-    LoadSpecialPokePicIsEgg(dest, species, personality, isFrontPic, FALSE);
+    LoadSpecialPokePicIsEgg(dest, species, personality, isFrontPic, FALSE, isShiny);
 }
 
-void HandleLoadSpecialPokePicIsEgg(bool32 isFrontPic, void *dest, s32 species, u32 personality, bool32 isEgg)
+void HandleLoadSpecialPokePicIsEgg(bool32 isFrontPic, void *dest, s32 species, u32 personality, bool32 isEgg, bool32 isShiny)
 {
-    LoadSpecialPokePicIsEgg(dest, species, personality, isFrontPic, isEgg);
+    LoadSpecialPokePicIsEgg(dest, species, personality, isFrontPic, isEgg, isShiny);
 }
 
 //  Wrapper function for all decompression calls using formats with headers
@@ -1129,12 +1138,12 @@ static bool32 isModeSymDelta(enum CompressionMode mode)
     return FALSE;
 }
 
-void LoadSpecialPokePic(void *dest, s32 species, u32 personality, bool8 isFrontPic)
+void LoadSpecialPokePic(void *dest, s32 species, u32 personality, bool8 isFrontPic, bool32 isShiny)
 {
-    LoadSpecialPokePicIsEgg(dest, species, personality, isFrontPic, FALSE);
+    LoadSpecialPokePicIsEgg(dest, species, personality, isFrontPic, FALSE, isShiny);
 }
 
-void LoadSpecialPokePicIsEgg(void *dest, s32 species, u32 personality, bool8 isFrontPic, bool32 isEgg)
+void LoadSpecialPokePicIsEgg(void *dest, s32 species, u32 personality, bool8 isFrontPic, bool32 isEgg, bool32 isShiny)
 {
     species = SanitizeSpeciesId(species);
     if (species == SPECIES_UNOWN)
@@ -1155,7 +1164,31 @@ void LoadSpecialPokePicIsEgg(void *dest, s32 species, u32 personality, bool8 isF
         else
     #endif
         if (gSpeciesInfo[species].frontPic != NULL)
-            DecompressDataWithHeaderWram(gSpeciesInfo[species].frontPic, dest);
+        {
+            if(isShiny && gSaveBlock3Ptr != NULL && gSaveBlock3Ptr->challengeSettings.tx_Features_ShinyColors)
+            {
+                switch(species)
+                {
+                    case SPECIES_PIKACHU:
+                        DecompressDataWithHeaderWram(gMonFrontPic_PikachuAlt, dest);
+                        break;
+                    case SPECIES_ONIX:
+                        DecompressDataWithHeaderWram(gMonFrontPic_OnixAlt, dest);
+                        break;
+                    case SPECIES_FOONGUS:
+                        DecompressDataWithHeaderWram(gMonFrontPic_FoongusSus, dest);
+                        break;
+                    case SPECIES_AMOONGUSS:
+                        DecompressDataWithHeaderWram(gMonFrontPic_AmoongussSus, dest);
+                        break;
+                    default:
+                        DecompressDataWithHeaderWram(gSpeciesInfo[species].frontPic, dest);
+                        break;
+                }
+            }
+            else
+                DecompressDataWithHeaderWram(gSpeciesInfo[species].frontPic, dest);
+        }
         else
             DecompressDataWithHeaderWram(gSpeciesInfo[SPECIES_NONE].frontPic, dest);
     }
@@ -1167,7 +1200,31 @@ void LoadSpecialPokePicIsEgg(void *dest, s32 species, u32 personality, bool8 isF
         else
     #endif
         if (gSpeciesInfo[species].backPic != NULL)
-            DecompressDataWithHeaderWram(gSpeciesInfo[species].backPic, dest);
+        {
+            if(isShiny && gSaveBlock3Ptr != NULL && gSaveBlock3Ptr->challengeSettings.tx_Features_ShinyColors)
+            {
+                switch(species)
+                {
+                    case SPECIES_PIKACHU:
+                        DecompressDataWithHeaderWram(gMonBackPic_PikachuAlt, dest);
+                        break;
+                    case SPECIES_ONIX:
+                        DecompressDataWithHeaderWram(gMonBackPic_OnixAlt, dest);
+                        break;
+                    case SPECIES_FOONGUS:
+                        DecompressDataWithHeaderWram(gMonBackPic_FoongusSus, dest);
+                        break;
+                    case SPECIES_AMOONGUSS:
+                        DecompressDataWithHeaderWram(gMonBackPic_AmoongussSus, dest);
+                        break;
+                    default:
+                        DecompressDataWithHeaderWram(gSpeciesInfo[species].backPic, dest);
+                        break;
+                }
+            }
+            else
+                DecompressDataWithHeaderWram(gSpeciesInfo[species].backPic, dest);
+        }
         else
             DecompressDataWithHeaderWram(gSpeciesInfo[SPECIES_NONE].backPic, dest);
     }

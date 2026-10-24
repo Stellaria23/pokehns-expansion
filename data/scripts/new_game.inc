@@ -451,6 +451,7 @@ EventScript_ResetAllMapFlagsHnS::
 	setvar VAR_TOHJO_FALLS_GIOVANNI_STATE, 0
 	setvar VAR_ROUTE22_GIOVANNI_STATE, 0
 	setvar VAR_ROUTE27_BAOBA_CALL, 0
+	setvar VAR_SAGE_TRAINER, 0
 
 	additem ITEM_EXP_SHARE
 	additem ITEM_GB_PLAYER

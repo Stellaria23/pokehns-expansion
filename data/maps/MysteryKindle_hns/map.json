@@ -1,0 +1,43 @@
+{
+  "id": "MAP_MYSTERY_KINDLE_HNS",
+  "name": "MysteryKindle_hns",
+  "layout": "LAYOUT_MYSTERY_KINDLE_HNS",
+  "music": "MUS_RG_SEVII_123",
+  "region_map_section": "MAPSEC_MYSTERY_KINDLE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_MYSTERY_ONE_HNS",
+      "offset": 123,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_MYSTERY_MOLTRES_GALAR",
+      "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MOLTRES_GALAR",
+      "x": 11,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MysteryKindle_hns_EventScript_MoltresGalar",
+      "flag": "FLAG_HIDE_MOLTRES_GALAR"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [],
+  "game_version": "hns",
+  "region": "REGION_GALAR"
+}

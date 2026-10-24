@@ -675,7 +675,18 @@
 #define TRAINER_MISTY_POSTOBC_HNS             651
 #define TRAINER_ERIKA_POSTOBC_HNS             652
 
-#define TRAINERS_COUNT_HNS                       653
+#define TRAINER_SAGE_TRAINER_1_HNS            653
+#define TRAINER_SAGE_TRAINER_2_HNS            654
+#define TRAINER_SAGE_TRAINER_3_HNS            655
+
+#define TRAINER_MYSTERY_JANE_HNS              656
+#define TRAINER_MYSTERY_BOBBY_HNS             657
+#define TRAINER_MYSTERY_MARKY_HNS             658
+#define TRAINER_MYSTERY_KAYLA_HNS             659
+
+
+
+#define TRAINERS_COUNT_HNS                       660
 #define MAX_TRAINERS_COUNT_HNS                   864
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_HNS_H

@@ -57,12 +57,12 @@ bool16 ResetAllPicSprites(void)
     return FALSE;
 }
 
-static bool16 DecompressPic(u16 picId, u32 personality, bool8 isFrontPic, u8 *dest, bool8 isTrainer)
+static bool16 DecompressPic(u16 picId, u32 personality, bool8 isFrontPic, u8 *dest, bool8 isTrainer, bool32 isShiny)
 {
     if (!isTrainer)
     {
         u16 species = picId;
-        LoadSpecialPokePic(dest, species, personality, isFrontPic);
+        LoadSpecialPokePic(dest, species, personality, isFrontPic, isShiny);
     }
     else
     {
@@ -147,7 +147,7 @@ static u16 CreatePicSprite(u16 species, bool8 isShiny, u32 personality, bool8 is
         Free(framePics);
         return 0xFFFF;
     }
-    if (DecompressPic(species, personality, isFrontPic, framePics, isTrainer))
+    if (DecompressPic(species, personality, isFrontPic, framePics, isTrainer, isShiny))
     {
         // debug trap?
         return 0xFFFF;
@@ -212,7 +212,7 @@ u16 CreateMonPicSprite_Affine(u16 species, bool8 isShiny, u32 personality, u8 fl
         Free(framePics);
         return 0xFFFF;
     }
-    if (DecompressPic(species, personality, flags, framePics, FALSE))
+    if (DecompressPic(species, personality, flags, framePics, FALSE, isShiny))
     {
         // debug trap?
         return 0xFFFF;
@@ -283,7 +283,7 @@ static u16 FreeAndDestroyPicSpriteInternal(u16 spriteId, bool8 clearPalette)
 
 static u16 LoadPicSpriteInWindow(u16 species, bool8 isShiny, u32 personality, bool8 isFrontPic, u8 paletteSlot, u8 windowId, bool8 isTrainer)
 {
-    if (DecompressPic(species, personality, isFrontPic, (u8 *)GetWindowAttribute(windowId, WINDOW_TILE_DATA), FALSE))
+    if (DecompressPic(species, personality, isFrontPic, (u8 *)GetWindowAttribute(windowId, WINDOW_TILE_DATA), FALSE, isShiny))
         return 0xFFFF;
 
     LoadPicPaletteBySlot(species, isShiny, personality, paletteSlot, isTrainer);
@@ -295,7 +295,7 @@ static u16 CreateTrainerCardSprite(u16 species, bool8 isShiny, u32 personality, 
     u8 *framePics;
 
     framePics = Alloc(TRAINER_PIC_SIZE * MAX_TRAINER_PIC_FRAMES);
-    if (framePics && !DecompressPic(species, personality, isFrontPic, framePics, isTrainer))
+    if (framePics && !DecompressPic(species, personality, isFrontPic, framePics, isTrainer, isShiny))
     {
         BlitBitmapRectToWindow(windowId, framePics, 0, 0, TRAINER_PIC_WIDTH, TRAINER_PIC_HEIGHT, destX, destY, TRAINER_PIC_WIDTH, TRAINER_PIC_HEIGHT);
         LoadPicPaletteBySlot(species, isShiny, personality, paletteSlot, isTrainer);

@@ -178,7 +178,9 @@
     "Route26_hns",
     "Route26North_hns",
     "Route27_hns",
-    "Route28_hns"
+    "Route28_hns",
+    "ChallengePlaza_hns",
+    "Fisher_Nest_hns"
   ],
   "gMapGroup_IndoorNewBark_Hns": [
     "NewBarkTown_Lab_hns",
@@ -426,7 +428,8 @@
     "SafariZoneGate_PokemonCenter_hns",
     "SafariZoneGate_SafariZoneEntrance_hns",
     "Route27_House_hns",
-    "MtSilver_PokemonCenter_hns"
+    "MtSilver_PokemonCenter_hns",
+    "Fisher_Nest_House_1_hns"
   ],
   "gMapGroup_IndoorKantoRoutes_Hns": [
     "Route26_House1_hns",
@@ -711,7 +714,17 @@
     "FuchsiaCity_SafariZoneBeach_hns",
     "FuchsiaCity_SafariZoneBrush_hns",
     "FuchsiaCity_SafariZoneMountain_hns",
-    "FuchsiaCity_SafariZoneCave_hns"
+    "FuchsiaCity_SafariZoneCave_hns",
+    "MysteryOne_hns",
+    "MysteryKindle_hns",
+    "MysteryOne_TeleporterHouse_hns",
+    "MysteryBeach_hns",
+    "MysteryOneTwoTunnel_hns",
+    "MysteryTwo_hns",
+    "MysteryBrink_hns",
+    "MysteryBridge_hns",
+    "MysteryThree_hns",
+    "MysteryForest"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",

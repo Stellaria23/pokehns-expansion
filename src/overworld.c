@@ -1595,6 +1595,16 @@ bool8 IsMapTypeOutdoors(enum MapType mapType)
 
 bool8 Overworld_MapTypeAllowsTeleportAndFly(enum MapType mapType)
 {
+    mapsec_u8_t currentMapsec = GetCurrentRegionMapSectionId();
+    if (currentMapsec == MAPSEC_MYSTERY_ONE
+     || currentMapsec == MAPSEC_MYSTERY_KINDLE
+     || currentMapsec == MAPSEC_MYSTERY_BEACH
+     || currentMapsec == MAPSEC_MYSTERY_TWO
+     || currentMapsec == MAPSEC_MYSTERY_BRINK
+     || currentMapsec == MAPSEC_MYSTERY_BRIDGE
+     || currentMapsec == MAPSEC_MYSTERY_THREE
+     || currentMapsec == MAPSEC_MYSTERY_FOREST)
+        return FALSE;
     if (mapType == MAP_TYPE_ROUTE
      || mapType == MAP_TYPE_TOWN
      || mapType == MAP_TYPE_OCEAN_ROUTE

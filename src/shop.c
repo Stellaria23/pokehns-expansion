@@ -1095,6 +1095,10 @@ static void Task_ReturnToShopMenu(u8 taskId)
     {
         if (sMartInfo.martType == MART_TYPE_DECOR2)
             DisplayItemMessageOnField(taskId, gText_CanIHelpWithAnythingElse, ShowShopMenuAfterExitingBuyOrSellMenu);
+#if IS_HNS
+        else if(FlagGet(FLAG_POLITOED_SHOP) == TRUE)
+            DisplayItemMessageOnField(taskId, gText_AnythingElsePolitoed, ShowShopMenuAfterExitingBuyOrSellMenu);
+#endif
         else
             DisplayItemMessageOnField(taskId, gText_AnythingElseICanHelp, ShowShopMenuAfterExitingBuyOrSellMenu);
     }

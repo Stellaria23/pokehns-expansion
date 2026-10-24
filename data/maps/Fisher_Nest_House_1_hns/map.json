@@ -1,0 +1,102 @@
+{
+  "id": "MAP_FISHER_NEST_HOUSE_1_HNS",
+  "name": "Fisher_Nest_House_1_hns",
+  "layout": "LAYOUT_FISHER_NEST_HOUSE_1_HNS",
+  "music": "MUS_HG_POKE_MART",
+  "region_map_section": "MAPSEC_FISHER_NEST_HNS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_FISHER",
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN_HNS",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Fisher_Nest_House_1_hns_EventScript_Clerk",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_FISHER_NEST_HNS",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Fisher_Nest_House_1_hns_Sign_Brochure"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Fisher_Nest_House_1_hns_Sign_FishingMagnetAd"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Fisher_Nest_House_1_hns_Sign_Brochure"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Fisher_Nest_House_1_hns_Sign_Brochure"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Fisher_Nest_House_1_hns_Sign_Brochure"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Fisher_Nest_House_1_hns_Sign_Brochure"
+    },
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Fisher_Nest_House_1_hns_Sign_Brochure"
+    }
+  ],
+  "game_version": "hns",
+  "region": "REGION_JOHTO"
+}

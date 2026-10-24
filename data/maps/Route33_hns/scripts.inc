@@ -35,6 +35,14 @@ Route33_EventScript_Lass::
 	release
 	end
 
+Route33_EventScript_Fisher::
+	lock
+	faceplayer
+	msgbox Route33_Text_Fisher, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 Route33_Text_HikerAnthony2Seen:
 	.string "I came through the tunnel,\n"
 	.string "but I still have plenty\l"
@@ -77,3 +85,11 @@ Route33_Text_Lass:
 	.string "I'd expected.\p"
 	.string "I got too tired exploring\n"
 	.string "for MARILL, so I came outside.$"
+
+Route33_Text_Fisher:
+	.string "My brother and I came from\n"
+	.string "UNOVA to do some business.\p"
+	.string "Come visit our new shop! It's\n"
+	.string "just south of here, you can't\l"
+	.string "miss it.$"
+

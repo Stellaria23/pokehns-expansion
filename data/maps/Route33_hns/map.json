@@ -22,6 +22,11 @@
       "map": "MAP_AZALEA_TOWN_HNS",
       "offset": -1,
       "direction": "left"
+    },
+    {
+      "map": "MAP_FISHER_NEST_HNS",
+      "offset": 12,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -54,7 +59,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MACHOP",
       "x": 33,
-      "y": 24,
+      "y": 23,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_DOWN_AND_UP",
       "movement_range_x": 0,
@@ -67,7 +72,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_MON_BASE+SPECIES_MACHOP",
       "x": 33,
-      "y": 27,
+      "y": 26,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
       "movement_range_x": 0,
@@ -166,6 +171,19 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_PECHA_1",
       "script": "BerryTreeScript",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN_HNS",
+      "x": 35,
+      "y": 28,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route33_EventScript_Fisher",
       "flag": "0"
     }
   ],

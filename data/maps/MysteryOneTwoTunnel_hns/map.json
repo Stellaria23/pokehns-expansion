@@ -1,0 +1,37 @@
+{
+  "id": "MAP_MYSTERY_ONE_TWO_TUNNEL_HNS",
+  "name": "MysteryOneTwoTunnel_hns",
+  "layout": "LAYOUT_MYSTERY_ONE_TWO_TUNNEL_HNS",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_MYSTERY_BEACH",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_MYSTERY_BEACH_HNS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 35,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_MYSTERY_TWO_HNS",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [],
+  "game_version": "hns",
+  "region": "REGION_GALAR"
+}

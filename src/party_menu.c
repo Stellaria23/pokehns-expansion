@@ -81,6 +81,7 @@
 #include "constants/party_menu.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "constants/flags_hns.h"
 
 enum {
     MENU_SUMMARY,
@@ -2900,7 +2901,7 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     {
         SetPartyMonFieldSelectionActions(mons, slotId);
     }
-    else if (action == ACTIONS_MOVES_SUB && P_PARTY_MOVE_RELEARNER)
+    else if (action == ACTIONS_MOVES_SUB && P_PARTY_MOVE_RELEARNER && FlagGet(FLAG_PARTY_RELEARNER_HNS))
     {
         sPartyMenuInternal->numActions = 0;
         SetPartyMonLearnMoveSelectionActions(mons, slotId);
@@ -2927,7 +2928,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
 
-    if (P_PARTY_MOVE_RELEARNER
+    if (P_PARTY_MOVE_RELEARNER && FlagGet(FLAG_PARTY_RELEARNER_HNS)
      && GetMonData(&mons[slotId], MON_DATA_SPECIES)
      && CanBoxMonRelearnAnyMove(&mons[slotId].box))
     {

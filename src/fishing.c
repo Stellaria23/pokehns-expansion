@@ -14,6 +14,15 @@
 #include "tv.h"
 #include "wild_encounter.h"
 #include "config/fishing.h"
+#include "item.h"
+#include "item_menu.h"
+#include "fishing_items.h"
+#include "string_util.h"
+#include "sound.h"
+#include "event_data.h"
+#include "constants/flags.h"
+
+
 
 static void Task_Fishing(u8);
 static bool32 Fishing_Init(struct Task *);
@@ -30,10 +39,12 @@ static bool32 Fishing_CheckMoreDots(struct Task *);
 static bool32 Fishing_MonOnHook(struct Task *);
 static bool32 Fishing_StartEncounter(struct Task *);
 static bool32 Fishing_NotEvenNibble(struct Task *);
+static bool32 Fishing_GotItem(struct Task *);
 static bool32 Fishing_GotAway(struct Task *);
 static bool32 Fishing_NoMon(struct Task *);
 static bool32 Fishing_PutRodAway(struct Task *);
 static bool32 Fishing_EndNoMon(struct Task *);
+static bool32 Fishing_WaitFanfare(struct Task *);
 static void AlignFishingAnimationFrames(void);
 static bool32 DoesFishingMinigameAllowCancel(void);
 static bool32 Fishing_DoesFirstMonInPartyHaveSuctionCupsOrStickyHold(void);
@@ -51,20 +62,25 @@ static u32 CalculateFishingTimeOfDayBoost(void);
     #define FISHING_OLD_ROD_ODDS 25
     #define FISHING_GOOD_ROD_ODDS 50
     #define FISHING_SUPER_ROD_ODDS 75
+
 #elif I_FISHING_BITE_ODDS >= GEN_3
     #define FISHING_OLD_ROD_ODDS 50
     #define FISHING_GOOD_ROD_ODDS 50
     #define FISHING_SUPER_ROD_ODDS 50
+
 #else
     #define FISHING_OLD_ROD_ODDS 100
     #define FISHING_GOOD_ROD_ODDS 33
     #define FISHING_SUPER_ROD_ODDS 50
+
 #endif
 
 static const u8 sText_OhABite[] = _("Oh! A bite!");
-static const u8 sText_PokemonOnHook[] = _("A POKéMON's on the hook!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_PokemonOnHook[] = _("A MOéMON's on the hook!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_NotEvenANibble[] = _("Not even a nibble…{PAUSE_UNTIL_PRESS}");
 static const u8 sText_ItGotAway[] = _("It got away…{PAUSE_UNTIL_PRESS}");
+static const u8 sText_GotItem[] = _("...It turned out to be an ITEM!");
+static const u8 gText_FoundItem[] = _("{PLAYER} found one {STR_VAR_2}! \nIt was put in the {STR_VAR_3} POCKET.{PAUSE_UNTIL_PRESS}");
 
 struct FriendshipHookChanceBoost
 {
@@ -105,6 +121,8 @@ enum
     FISHING_NO_MON,
     FISHING_PUT_ROD_AWAY,
     FISHING_END_NO_MON,
+    FISHING_GOT_ITEM,
+    FISHING_WAIT_FANFARE,
 };
 
 static bool32 (*const sFishingStateFuncs[])(struct Task *) =
@@ -127,6 +145,8 @@ static bool32 (*const sFishingStateFuncs[])(struct Task *) =
     [FISHING_NO_MON]                = Fishing_NoMon,
     [FISHING_PUT_ROD_AWAY]          = Fishing_PutRodAway,
     [FISHING_END_NO_MON]            = Fishing_EndNoMon,
+    [FISHING_GOT_ITEM]              = Fishing_GotItem,
+    [FISHING_WAIT_FANFARE]          = Fishing_WaitFanfare,
 };
 
 #define tStep              data[0]
@@ -275,7 +295,52 @@ static bool32 Fishing_CheckForBite(struct Task *task)
         bite = Fishing_RollForBite(task->tFishingRod, firstMonHasSuctionOrSticky);
 
     if (!bite)
-        task->tStep = FISHING_NOT_EVEN_NIBBLE;
+    {
+        u8 rod = task->tFishingRod;
+        u8 itemPos;
+        switch (rod)
+        {
+            case OLD_ROD:
+                itemPos = (u8)ARRAY_COUNT(sFishingItems_Old);
+                gSpecialVar_ItemId = sFishingItems_Old[Random() % itemPos];
+                break;
+
+            case GOOD_ROD:
+                itemPos = (u8)ARRAY_COUNT(sFishingItems_Good);
+                gSpecialVar_ItemId = sFishingItems_Good[Random() % itemPos];
+                break;
+
+            case SUPER_ROD:
+                itemPos = (u8)ARRAY_COUNT(sFishingItems_Old);
+                gSpecialVar_ItemId = sFishingItems_Old[Random() % itemPos];
+        }
+        StringCopy(gStringVar2, ItemId_GetName(gSpecialVar_ItemId));
+        switch (GetPocketByItemId(gSpecialVar_ItemId))
+        {
+            case POCKET_ITEMS:
+                StringCopy(gStringVar3, gText_Items);
+                break;
+            case POCKET_MEDICINE:
+                StringCopy(gStringVar3, gText_Medicine);
+                break;
+            case POCKET_POKE_BALLS:
+                StringCopy(gStringVar3, gText_Poke_Balls);
+                break;
+            case POCKET_TM_HM:
+                StringCopy(gStringVar3, gText_TMs_Hms);
+                break;
+            case POCKET_BERRIES:
+                StringCopy(gStringVar3, gText_Berries2);
+                break;
+            case POCKET_KEY_ITEMS:
+                StringCopy(gStringVar3, gText_Key_Items);
+                break;
+        }
+        if (!FlagGet(FLAG_GET_FISHING_MAGNET) || !AddBagItem(gSpecialVar_ItemId, 1))
+            task->tStep = FISHING_NOT_EVEN_NIBBLE;
+        else
+             task->tStep = FISHING_GOT_ITEM;
+    }
 
     if (bite)
         StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingBiteDirectionAnimNum(GetPlayerFacingDirection()));
@@ -420,6 +485,29 @@ static bool32 Fishing_NotEvenNibble(struct Task *task)
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     AddTextPrinterParameterized2(0, FONT_NORMAL, sText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     task->tStep = FISHING_NO_MON;
+    return TRUE;
+}
+
+static bool32 Fishing_GotItem(struct Task *task)
+{
+    gChainFishingDexNavStreak = 0;
+    AlignFishingAnimationFrames();
+    StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
+    StringExpandPlaceholders(gStringVar4, gText_FoundItem);
+    FillWindowPixelBuffer(0, PIXEL_FILL(1));
+    AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    PlayFanfare(FANFARE_OBTAIN_ITEM);
+    task->tStep = FISHING_NO_MON;
+    return TRUE;
+}
+
+static bool32 Fishing_WaitFanfare(struct Task *task)
+{
+    if(IsFanfareTaskInactive())
+    {
+        task->tStep = FISHING_NO_MON;
+    }
+    task->tStep = FISHING_WAIT_FANFARE;
     return TRUE;
 }
 

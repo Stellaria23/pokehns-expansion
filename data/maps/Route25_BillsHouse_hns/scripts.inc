@@ -35,9 +35,23 @@ Route25_BillsHouse_hns_EventScript_TeleporterTest::
 	case 127, Route25_BillsHouse_hns_EndChoice
 	end
 
+Route25_BillsHouse_hns_EventScript_TeleporterTest2::
+	lockall
+	msgbox Route25_BillsHouse_Text_Teleporter2, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, FALSE, Route25_BillsHouse_hns_EndChoice
+	closemessage
+	goto Route25_BillsHouse_hns_CutsceneSetup2
+	releaseall
+	end
+
+Route25_BillsHouse_Text_Teleporter2:
+	.string "THIS MACHINE WILL TRANSPORT\n"
+	.string "YOU TO AN UNKNOWN PLACE.\l"
+	.string "WOULD YOU LIKE TO PROCEED?$"
+
 Route25_BillsHouse_Text_Teleporter:
 	.string "THIS MACHINE WILL TRANSFORM\n"
-	.string "A POKéMON INTO ITS GALARIAN FORM\l"
+	.string "A MOéMON INTO ITS GALARIAN FORM\l"
 	.string "THIS PROCESS IS PERMANENT.\l"
 	.string "WOULD YOU LIKE TO PROCEED?$"
 
@@ -268,6 +282,62 @@ Route25_BillsHouse_hns_CutsceneCleanup::
 	releaseall
 	end
 
+Route25_BillsHouse_hns_CutsceneSetup2::
+	fadescreen FADE_TO_BLACK
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, Route25_BillsHouse_SetPlayerMale
+	call_if_eq VAR_RESULT, FEMALE, Route25_BillsHouse_SetPlayerFemale
+	addobject LOCALID_BILLS_GRANDPA_PLAYER
+	applymovement OBJ_EVENT_ID_PLAYER, Route25_BillsHouse_Movement_HidePlayer
+	hidefollower
+	turnobject LOCALID_BILLS_GRANDPA, DIR_NORTH
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, Route25_BillsHouse_Movement_CameraPanUp
+	waitmovement 0
+	delay 60
+	fadescreen FADE_FROM_BLACK
+
+Route25_BillsHouse_hns_CutsceneBeforeTeleport2::
+	delay 60
+	opendoor 10, 3
+	waitdooranim
+	applymovement LOCALID_BILLS_GRANDPA_PLAYER, Common_Movement_WalkUp1
+	waitmovement 0
+	turnobject LOCALID_BILLS_GRANDPA_PLAYER, DIR_SOUTH
+	playse SE_CONTEST_CURTAIN_FALL
+	closedoor 10, 3
+	delay 10
+	removeobject LOCALID_BILLS_GRANDPA_PLAYER
+	waitdooranim
+	
+Route25_BillsHouse_hns_CutsceneTeleport2::
+	delay 35
+	playse SE_PIN
+	waitse
+	setvar VAR_0x8004, 0
+	special AnimateTeleporterHousing
+	delay 10
+	call Route25_BillsHouse_hns_BeepSE
+	call Route25_BillsHouse_hns_BeepSE
+	call Route25_BillsHouse_hns_BeepSE
+	call Route25_BillsHouse_hns_BeepSE
+	call Route25_BillsHouse_hns_BeepSE
+	call Route25_BillsHouse_hns_BeepSE
+	call Route25_BillsHouse_hns_BeepSE
+	setvar VAR_0x8004, 1
+	playse SE_WARP_IN
+	waitse
+	delay 30
+	fadescreen FADE_TO_BLACK
+	applymovement OBJ_EVENT_ID_PLAYER, Route25_BillsHouse_Movement_ShowPlayer
+	removeobject LOCALID_BILLS_GRANDPA_PLAYER
+	warp MAP_MYSTERY_ONE_TELEPORTER_HOUSE_HNS, 3, 3
+	waitstate
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+
 Route25_BillsHouse_Movement_CameraPanUp:
 	walk_up
 	walk_up
@@ -364,7 +434,7 @@ Route25_BillsHouse_hns_Text_Cancel:
 	.string "CANCEL$"
 
 Route25_BillsHouse_hns_Text_NotInParty:
-	.string "POKéMON NOT DETECTED.$"
+	.string "MOéMON NOT DETECTED.$"
 
 @VAR_BILLS_GRANDPA
 
@@ -494,6 +564,7 @@ Route25_BillsHouse_EventScript_Gramps_SlowpokeReward::
 	msgbox Route25_BillsHouse_Text_TeleporterUnlocked, MSGBOX_DEFAULT
 	setflag FLAG_TELEPORTER_UNLOCKED
 	addvar VAR_BILLS_GRANDPA, 1
+	setvar VAR_MYSTERY_ISLANDS, 0
 	closemessage
 	release
 	end
@@ -544,31 +615,31 @@ Route25_BillsHouse_Text_GrandpaIntro:
 
 Route25_BillsHouse_Text_GrampsMeowth:
 	.string "My grandson BILL told me about\n"
-	.string "a POKéMON that has sharp claws,\l"
+	.string "a MOéMON that has sharp claws,\l"
 	.string "a charm on its head, and is\p"
 	.string "said to bring good fortune.$"
 
 Route25_BillsHouse_Text_GrampsZigzagoon:
-	.string "BILL mentioned a POKéMON that\n"
+	.string "BILL mentioned a MOéMON that\n"
 	.string "runs around in a zigzag\l"
 	.string "pattern.\p"
 	.string "It's quite the little\n"
 	.string "scavenger, I hear.$"
 
 Route25_BillsHouse_Text_GrampsPonyta:
-	.string "Do you know of a POKéMON with\n"
+	.string "Do you know of a MOéMON with\n"
 	.string "a fiery mane?\p"
 	.string "I hear it can run faster than\n"
 	.string "most trains.$"
 
 Route25_BillsHouse_Text_GrampsFarfetchd:
-	.string "BILL told me about a POKéMON\n"
+	.string "BILL told me about a MOéMON\n"
 	.string "that always carries a stalk\l"
 	.string "of leek with it.\p"
 	.string "Quite the peculiar creature.$"
 
 Route25_BillsHouse_Text_GrampsSlowpoke:
-	.string "Do you know the POKéMON that\n"
+	.string "Do you know the MOéMON that\n"
 	.string "is always staring blankly?\p"
 	.string "Its tail is often sold on the\n"
 	.string "black market.$"
@@ -577,15 +648,15 @@ Route25_BillsHouse_Text_TeleporterUnlocked:
 	.string "Oh, one more thing!\p"
 	.string "BILL's TELEPORTER.\n"
 	.string "That's the big machine over there.\p"
-	.string "He never quite got it working.\p"
-	.string "But it does curious things to\n"
-	.string "POKéMON.\p"
-	.string "You're welcome to try it, if\n"
-	.string "you'd like!\p"
+	.string "He tried to get it working,\n"
+	.string "but we don't know where it sends\l"
+	.string "what's in it.\p"
+	.string "I wouldn't recommend it, but\n"
+	.string "if you want to use it, feel free to!\p"
 	.string "Just use that computer over there.$"
 
 Route25_BillsHouse_Text_AskToSeeMon:
-	.string "If you have that POKéMON, may I\n"
+	.string "If you have that MOéMON, may I\n"
 	.string "see it, please?$"
 
 Route25_BillsHouse_Text_ExcitedToSee:
@@ -611,7 +682,7 @@ Route25_BillsHouse_Text_ComeAgain:
 
 Route25_BillsHouse_Text_ShownAll:
 	.string "Thanks for showing me so many\n"
-	.string "cute POKéMON.\p"
+	.string "cute MOéMON.\p"
 	.string "I really enjoyed myself. I'm\n"
 	.string "glad I've lived such a long life.\p"
 	.string "Feel free to use the TELEPORTER\n"
@@ -619,7 +690,7 @@ Route25_BillsHouse_Text_ShownAll:
 
 Route25_BillsHouse_Text_WrongPokemon:
 	.string "Hm?\p"
-	.string "That's not the POKéMON that I\n"
+	.string "That's not the MOéMON that I\n"
 	.string "was told about.$"
 
 

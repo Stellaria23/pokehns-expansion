@@ -7185,7 +7185,18 @@ static inline u32 CalcAttackStat(struct BattleContext *ctx)
     default:
         break;
     }
-
+/*
+    if(atkBaseSpeciesId == SPECIES_UNOWN) // I hope this works
+    {
+        struct Pokemon *party = GetBattlerParty(battlerAtk);
+        u16 i;
+        for(i = 1; i < PARTY_SIZE; i++)
+        {
+            if(GetMonData(&party[i], MON_DATA_SPECIES) == SPECIES_UNOWN)
+                modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.25));
+        }
+    }
+*/
     modifier = ApplyOffensiveBadgeBoost(modifier, battlerAtk, move);
 
     return uq4_12_multiply_by_int_half_down(modifier, atkStat);

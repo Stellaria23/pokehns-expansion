@@ -15780,7 +15780,7 @@ Sassy Nature
 - Crunch  
 - Aqua Tail  
 
-Tauros-Paldea-Blaze  
+Tauros  
 Ability: Intimidate  
 Level: 75 
 - Raging Bull  
@@ -15993,7 +15993,7 @@ Level: 86
 - Ice Beam  
 - Flash Cannon  
 
-Tauros-Paldea-Combat @ Sitrus Berry  
+Tauros @ Sitrus Berry  
 Ability: Cud Chew  
 Level: 85  
 Tera Type: Fighting  
@@ -16002,3 +16002,189 @@ Tera Type: Fighting
 - Bulk Up  
 - Throat Chop
 
+=== TRAINER_SAGE_TRAINER_1_HNS ===
+Name: COLTON
+Class: Sage Hns
+Pic: Sage Hns
+Gender: Male
+Music: Hg Sage
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Machoke @ Liechi Berry
+Level: 25
+- Focus Energy
+- Close Combat
+- Foresight
+- Karate Chop
+
+Miltank @ Sitrus Berry
+Level: 25
+- Attract
+- Defense Curl
+- Rollout
+- Dizzy Punch
+
+Misdreavus @ Colbur Berry
+Level: 25
+- Destiny Bond
+- Confuse Ray
+- Hex
+- Psywave
+
+=== TRAINER_SAGE_TRAINER_2_HNS ===
+Name: COLTON
+Class: Sage Hns
+Pic: Sage Hns
+Gender: Male
+Music: Hg Sage
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Machamp @ Liechi Berry
+Level: 50
+- Focus Energy
+- Cross Chop
+- Bulk Up
+
+Miltank @ Sitrus Berry
+Level: 50
+- Attract
+- Defense Curl
+- Milk Drink
+- Rollout
+
+Mismagius @ Colbur Berry
+Level: 50
+- Destiny Bond
+- Confuse Ray
+- Hex
+- Psywave
+
+Flareon @ Rowap Berry
+Level: 50
+- Flare Blitz
+- Last Resort
+
+=== TRAINER_SAGE_TRAINER_3_HNS ===
+Name: COLTON
+Class: Sage Hns
+Pic: Sage Hns
+Gender: Male
+Music: Hg Sage
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Slowbro @ Quick Claw
+Level: 54
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Curse
+- Rock Smash
+- Body Slam
+- Zen Headbutt
+
+Machamp @ Black Belt
+Level: 59
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Rock Slide
+- Fire Punch
+- Vital Throw
+- Cross Chop
+
+Houndoom @ Black Glasses
+Level: 60
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Flamethrower
+- Crunch
+- Iron Tail
+- Reversal
+
+Crobat @ Bright Powder
+Level: 57
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Double Team
+- Toxic
+- Bite
+- Confuse Ray
+
+Dragonite @ Sitrus Berry
+Level: 61
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder
+- Safeguard
+- Outrage
+- Hyper Beam
+
+=== TRAINER_MYSTERY_JANE_HNS ===
+Name: JANE
+Class: Swimmer F Hns
+Pic: Swimmer F
+Gender: Male
+Music: Hg Girl 1
+Double Battle: No
+AI: Check Bad Move
+
+Dewgong
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Barraskewda
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MYSTERY_BOBBY_HNS ===
+Name: JIMMY
+Class: Swimmer M Hns
+Pic: Swimmer M
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move
+
+Barraskewda
+Level: 73
+IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
+
+
+=== TRAINER_MYSTERY_MARKY_HNS ===
+Name: MARKY
+Class: Swimmer M Hns
+Pic: Swimmer M
+Gender: Male
+Music: Hg Boy 2
+Double Battle: No
+AI: Check Bad Move
+
+Slowbro-Galar
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Corsola-Galar
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Slowking-Galar
+Level: 46
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+=== TRAINER_MYSTERY_KAYLA_HNS ===
+Name: KAYLA
+Class: Picnicker Hns
+Pic: Picnicker
+Gender: Male
+Music: Hg Girl 2
+Double Battle: No
+AI: Check Bad Move
+
+Meowth-Galar
+Level: 36
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Greedent
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Thievul
+Level: 48
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

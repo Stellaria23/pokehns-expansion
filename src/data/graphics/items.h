@@ -1832,6 +1832,7 @@ const u16 gItemIconPalette_OldRod[] = INCBIN_U16("graphics/items/icon_palettes/o
 
 const u32 gItemIcon_GoodRod[] = INCBIN_U32("graphics/items/icons/good_rod.4bpp.smol");
 const u16 gItemIconPalette_GoodRod[] = INCBIN_U16("graphics/items/icon_palettes/good_rod.gbapal");
+const u32 gItemIcon_FishingMagnet[] = INCBIN_U32("graphics/items/icons/fishing_magnet.4bpp.smol");
 
 const u32 gItemIcon_SuperRod[] = INCBIN_U32("graphics/items/icons/super_rod.4bpp.smol");
 const u16 gItemIconPalette_SuperRod[] = INCBIN_U16("graphics/items/icon_palettes/super_rod.gbapal");

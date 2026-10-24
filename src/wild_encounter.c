@@ -33,6 +33,8 @@
 #include "constants/weather.h"
 #include "pokenav.h"
 #include "sound.h"
+#include "constants/flags.h"
+#include "event_data.h"
 
 extern const u8 EventScript_SprayWoreOff[];
 
@@ -417,7 +419,9 @@ u16 GetCurrentMapWildMonHeaderId(void)
 enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area)
 {
     const struct WildPokemonInfo *wildMonInfo;
+    const struct WildPokemonInfo *wildMonInfo_Alt;
     enum TimeOfDay timeOfDay = GetTimeOfDay();
+    enum TimeOfDay timeOfDay_Alt = OW_TIME_OF_DAY_FALLBACK;
 
     if (!OW_TIME_OF_DAY_ENCOUNTERS)
         return TIME_OF_DAY_DEFAULT;
@@ -425,28 +429,43 @@ enum TimeOfDay GetTimeOfDayForEncounters(u32 headerId, enum WildPokemonArea area
     if (InBattlePike() || CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
         return OW_TIME_OF_DAY_FALLBACK;
 
+    if (FlagGet(FLAG_EVENING_ENCOUNTERS))
+        timeOfDay_Alt = TIME_EVENING;
+
     switch (area)
     {
     default:
     case WILD_AREA_LAND:
         wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo;
+        wildMonInfo_Alt = gWildMonHeaders[headerId].encounterTypes[timeOfDay_Alt].landMonsInfo;
         break;
     case WILD_AREA_WATER:
         wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].waterMonsInfo;
+        wildMonInfo_Alt = gWildMonHeaders[headerId].encounterTypes[timeOfDay_Alt].waterMonsInfo;
         break;
     case WILD_AREA_ROCKS:
         wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].rockSmashMonsInfo;
+        wildMonInfo_Alt = gWildMonHeaders[headerId].encounterTypes[timeOfDay_Alt].rockSmashMonsInfo;
         break;
     case WILD_AREA_FISHING:
         wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo;
+        wildMonInfo_Alt = gWildMonHeaders[headerId].encounterTypes[timeOfDay_Alt].fishingMonsInfo;
         break;
     case WILD_AREA_HIDDEN:
         wildMonInfo = gWildMonHeaders[headerId].encounterTypes[timeOfDay].hiddenMonsInfo;
+        wildMonInfo_Alt = gWildMonHeaders[headerId].encounterTypes[timeOfDay_Alt].hiddenMonsInfo;
         break;
     }
 
     if (wildMonInfo == NULL && !OW_TIME_OF_DAY_DISABLE_FALLBACK)
         return OW_TIME_OF_DAY_FALLBACK;
+
+    else if (timeOfDay_Alt != OW_TIME_OF_DAY_FALLBACK && wildMonInfo_Alt != NULL)
+        return TIME_EVENING;
+
+    else if (timeOfDay_Alt != OW_TIME_OF_DAY_FALLBACK && timeOfDay_Alt == timeOfDay)
+        return OW_TIME_OF_DAY_FALLBACK;
+    
     else
         return GenConfigTimeOfDay(timeOfDay);
 }

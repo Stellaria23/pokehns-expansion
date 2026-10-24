@@ -1867,13 +1867,19 @@ static void Task_ProcessInput(u8 taskId)
 
     if (JOY_NEW(L_BUTTON))
     {
-        SwitchTab(taskId, -1);
+        if(sMenu->currentTab == TAB_NUZLOCKE)
+            SwitchTab(taskId, -2);
+        else 
+            SwitchTab(taskId, -1);
         return;
     }
 
     if (JOY_NEW(R_BUTTON))
     {
-        SwitchTab(taskId, +1);
+        if(sMenu->currentTab == TAB_FEATURES)
+            SwitchTab(taskId, +2);
+        else 
+            SwitchTab(taskId, +1);
         return;
     }
 

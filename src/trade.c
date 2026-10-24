@@ -2770,12 +2770,13 @@ static void LoadTradeMonPic(struct Pokemon *mon, u8 state)
     u32 species, personality;
     u32 whichParty = state / 2;
     species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+    bool32 isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
     switch (state % 2)
     {
     case 0:
         personality = GetMonData(mon, MON_DATA_PERSONALITY);
 
-        HandleLoadSpecialPokePic(TRUE, gMonSpritesGfxPtr->spritesGfx[whichParty * 2 + B_POSITION_OPPONENT_LEFT], species, personality);
+        HandleLoadSpecialPokePic(TRUE, gMonSpritesGfxPtr->spritesGfx[whichParty * 2 + B_POSITION_OPPONENT_LEFT], species, personality, isShiny);
 
         LoadSpritePaletteWithTag(GetMonFrontSpritePal(mon), species);
         sTradeAnim->monSpecies[whichParty] = species;
@@ -3814,7 +3815,8 @@ static bool8 DoTradeAnim_Cable(void)
             HandleLoadSpecialPokePic(TRUE,
                                      gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_RIGHT],
                                      sTradeAnim->monSpecies[TRADE_PARTNER],
-                                     sTradeAnim->monPersonalities[TRADE_PARTNER]);
+                                     sTradeAnim->monPersonalities[TRADE_PARTNER],
+                                     FALSE);
             sTradeAnim->state++;
         }
         break;
@@ -4314,7 +4316,8 @@ static bool8 DoTradeAnim_Wireless(void)
             HandleLoadSpecialPokePic(TRUE,
                                       gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_RIGHT],
                                       sTradeAnim->monSpecies[TRADE_PARTNER],
-                                      sTradeAnim->monPersonalities[TRADE_PARTNER]);
+                                      sTradeAnim->monPersonalities[TRADE_PARTNER],
+                                      FALSE);
             sTradeAnim->state++;
         }
         break;

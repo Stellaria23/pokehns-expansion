@@ -22,6 +22,11 @@
       "map": "MAP_ECRUTEAK_CITY_HNS",
       "offset": -16,
       "direction": "up"
+    },
+    {
+      "map": "MAP_CHALLENGE_PLAZA_HNS",
+      "offset": 11,
+      "direction": "left"
     }
   ],
   "object_events": [

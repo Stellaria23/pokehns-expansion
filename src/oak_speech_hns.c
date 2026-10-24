@@ -374,8 +374,8 @@ static void Task_NewGameHnsSpeechSub_InitPokeBall(u8 taskId)
 {
     u8 spriteId = gTasks[sHnsSpeechMainTaskId].tMonSpriteId;
 
-    gSprites[spriteId].x = 100;
-    gSprites[spriteId].y = 75;
+    gSprites[spriteId].x = 92;
+    gSprites[spriteId].y = 65;
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
@@ -580,7 +580,7 @@ static void Task_NewGameHnsSpeech_SlideInNewGenderSprite(u8 taskId)
 
 static void Task_NewGameHnsSpeech_ChallengeDisclaimer(u8 taskId)
 {
-    static const u8 sText_Disclaimer[] = _("What challenge are you\nexpecting?\p{COLOR RED}The following settings can be changed\nfrom the PC once you start the game.\lHowever, after starting the game, the\lnuzlocke, randomizer, difficulty and\lchallenge settings can only be made\leasier, not harder.");
+    static const u8 sText_Disclaimer[] = _("What challenge are you\nexpecting?\p{COLOR RED}The following settings can be changed\nfrom the PC once you start the game.\lHowever, after starting the game, the\lnuzlocke, randomizer, difficulty and\lchallenge settings can only be made\leasier, not harder.\p{COLOR BLUE}NOTE: The Randomizer settings are\ncurrently unavailable for this\lrelease.");
     NewGameHnsSpeech_ClearWindow(0);
     StringCopy(gStringVar4, sText_Disclaimer);
     AddTextPrinterWithCustomSpeedForMessage(FALSE, 2);
@@ -748,8 +748,8 @@ static void Task_NewGameHnsSpeech_ReshowProfessorMon(u8 taskId)
         gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         spriteId = gTasks[taskId].tMonSpriteId;
-        gSprites[spriteId].x = 100;
-        gSprites[spriteId].y = 75;
+        gSprites[spriteId].x = 92;
+        gSprites[spriteId].y = 65;
         gSprites[spriteId].invisible = FALSE;
         gSprites[spriteId].oam.objMode = ST_OAM_OBJ_BLEND;
         NewGameHnsSpeech_StartFadeInTarget1OutTarget2(taskId, 2);
@@ -1069,7 +1069,7 @@ static void AddHnsSpeechObjects(u8 taskId)
     gSprites[professorSpriteId].oam.priority = 0;
     gSprites[professorSpriteId].invisible = TRUE;
     gTasks[taskId].tProfessorSpriteId = professorSpriteId;
-    monSpriteId = NewGameHnsSpeech_CreateMonSprite(100, 0x4B);
+    monSpriteId = NewGameHnsSpeech_CreateMonSprite(92, 0x41);
     gSprites[monSpriteId].callback = SpriteCB_Null;
     gSprites[monSpriteId].oam.priority = 0;
     gSprites[monSpriteId].invisible = TRUE;

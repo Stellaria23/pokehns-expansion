@@ -1973,6 +1973,13 @@ static void Task_HandleInput(u8 taskId)
                 PlaySE(SE_SELECT);
             }
         }
+        else if (DEBUG_POKEMON_SPRITE_VISUALIZER && JOY_NEW(SELECT_BUTTON) && !gMain.inBattle)
+        {
+            sMonSummaryScreen->callback = CB2_Pokemon_Sprite_Visualizer;
+            StopPokemonAnimations();
+            PlaySE(SE_SELECT);
+            CloseSummaryScreen(taskId);
+        }
         else if (JOY_NEW(R_BUTTON))
         {
             if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
@@ -4713,7 +4720,8 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
                                      gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_LEFT],
                                      summary->species,
                                      summary->pid,
-                                     summary->isEgg);
+                                     summary->isEgg,
+                                     summary->isShiny);
         }
         else
         {
@@ -4723,7 +4731,8 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
                                          gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_LEFT],
                                          summary->species,
                                          summary->pid,
-                                         summary->isEgg);
+                                         summary->isEgg,
+                                         summary->isShiny);
             }
             else
             {
@@ -4731,7 +4740,8 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state)
                                          MonSpritesGfxManager_GetSpritePtr(MON_SPR_GFX_MANAGER_A, B_POSITION_OPPONENT_LEFT),
                                          summary->species,
                                          summary->pid,
-                                         summary->isEgg);
+                                         summary->isEgg,
+                                         summary->isShiny);
             }
         }
         (*state)++;

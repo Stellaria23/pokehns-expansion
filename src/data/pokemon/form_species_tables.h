@@ -2,7 +2,7 @@
 static const u16 sVenusaurFormSpeciesIdTable[] = {
     SPECIES_VENUSAUR,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_VENUSAUR_MEGA,
+    //SPECIES_VENUSAUR_MEGA,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_VENUSAUR_GMAX,
@@ -15,8 +15,8 @@ static const u16 sVenusaurFormSpeciesIdTable[] = {
 static const u16 sCharizardFormSpeciesIdTable[] = {
     SPECIES_CHARIZARD,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_CHARIZARD_MEGA_X,
-    SPECIES_CHARIZARD_MEGA_Y,
+    //SPECIES_CHARIZARD_MEGA_X,
+    //SPECIES_CHARIZARD_MEGA_Y,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_CHARIZARD_GMAX,
@@ -29,7 +29,7 @@ static const u16 sCharizardFormSpeciesIdTable[] = {
 static const u16 sBlastoiseFormSpeciesIdTable[] = {
     SPECIES_BLASTOISE,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_BLASTOISE_MEGA,
+    //SPECIES_BLASTOISE_MEGA,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_BLASTOISE_GMAX,
@@ -52,7 +52,7 @@ static const u16 sButterfreeFormSpeciesIdTable[] = {
 static const u16 sBeedrillFormSpeciesIdTable[] = {
     SPECIES_BEEDRILL,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_BEEDRILL_MEGA,
+    //SPECIES_BEEDRILL_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -62,7 +62,7 @@ static const u16 sBeedrillFormSpeciesIdTable[] = {
 static const u16 sPidgeotFormSpeciesIdTable[] = {
     SPECIES_PIDGEOT,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_PIDGEOT_MEGA,
+    //SPECIES_PIDGEOT_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -318,7 +318,7 @@ static const u16 sArcanineHisuiFormSpeciesIdTable[] = {
 static const u16 sAlakazamFormSpeciesIdTable[] = {
     SPECIES_ALAKAZAM,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_ALAKAZAM_MEGA,
+    //SPECIES_ALAKAZAM_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -338,7 +338,7 @@ static const u16 sMachampFormSpeciesIdTable[] = {
 static const u16 sVictreebelFormSpeciesIdTable[] = {
     SPECIES_VICTREEBEL,
 #if P_GEN_9_MEGA_EVOLUTIONS
-    SPECIES_VICTREEBEL_MEGA,
+    //SPECIES_VICTREEBEL_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -425,7 +425,7 @@ static const u16 sSlowpokeFormSpeciesIdTable[] = {
 static const u16 sSlowbroFormSpeciesIdTable[] = {
     SPECIES_SLOWBRO,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_SLOWBRO_MEGA,
+    //SPECIES_SLOWBRO_MEGA,
 #endif
 #if P_GALARIAN_FORMS && !P_SEPARATE_REGIONAL_FORMS
     SPECIES_SLOWBRO_GALAR,
@@ -506,7 +506,7 @@ static const u16 sMukAlolaFormSpeciesIdTable[] = {
 static const u16 sGengarFormSpeciesIdTable[] = {
     SPECIES_GENGAR,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_GENGAR_MEGA,
+    //SPECIES_GENGAR_MEGA,
 #endif
 #if P_GIGANTAMAX_FORMS
     SPECIES_GENGAR_GMAX,
@@ -618,7 +618,7 @@ static const u16 sWeezingGalarFormSpeciesIdTable[] = {
 static const u16 sKangaskhanFormSpeciesIdTable[] = {
     SPECIES_KANGASKHAN,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_KANGASKHAN_MEGA,
+    //
 #endif
     FORM_SPECIES_END,
 };
@@ -665,7 +665,7 @@ static const u16 sScizorFormSpeciesIdTable[] = {
 static const u16 sPinsirFormSpeciesIdTable[] = {
     SPECIES_PINSIR,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_PINSIR_MEGA,
+    //SPECIES_PINSIR_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -694,7 +694,7 @@ static const u16 sTaurosPaldeaFormSpeciesIdTable[] = {
 static const u16 sGyaradosFormSpeciesIdTable[] = {
     SPECIES_GYARADOS,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_GYARADOS_MEGA,
+    //SPECIES_GYARADOS_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -725,7 +725,7 @@ static const u16 sEeveeFormSpeciesIdTable[] = {
 static const u16 sAerodactylFormSpeciesIdTable[] = {
     SPECIES_AERODACTYL,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_AERODACTYL_MEGA,
+    //SPECIES_AERODACTYL_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -790,7 +790,7 @@ static const u16 sMoltresGalarFormSpeciesIdTable[] = {
 static const u16 sDragoniteFormSpeciesIdTable[] = {
     SPECIES_DRAGONITE,
 #if P_GEN_9_MEGA_EVOLUTIONS
-    SPECIES_DRAGONITE_MEGA,
+    //SPECIES_DRAGONITE_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1006,7 +1006,7 @@ static const u16 sTyranitarFormSpeciesIdTable[] = {
 static const u16 sSceptileFormSpeciesIdTable[] = {
     SPECIES_SCEPTILE,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_SCEPTILE_MEGA,
+    //SPECIES_SCEPTILE_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1016,7 +1016,7 @@ static const u16 sSceptileFormSpeciesIdTable[] = {
 static const u16 sBlazikenFormSpeciesIdTable[] = {
     SPECIES_BLAZIKEN,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_BLAZIKEN_MEGA,
+    //SPECIES_BLAZIKEN_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1026,7 +1026,7 @@ static const u16 sBlazikenFormSpeciesIdTable[] = {
 static const u16 sSwampertFormSpeciesIdTable[] = {
     SPECIES_SWAMPERT,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_SWAMPERT_MEGA,
+    //SPECIES_SWAMPERT_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1064,7 +1064,7 @@ static const u16 sLinooneGalarFormSpeciesIdTable[] = {
 static const u16 sGardevoirFormSpeciesIdTable[] = {
     SPECIES_GARDEVOIR,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_GARDEVOIR_MEGA,
+    //SPECIES_GARDEVOIR_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1073,7 +1073,7 @@ static const u16 sGardevoirFormSpeciesIdTable[] = {
 static const u16 sGalladeFormSpeciesIdTable[] = {
     SPECIES_GALLADE,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_GALLADE_MEGA,
+    //SPECIES_GALLADE_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1084,7 +1084,7 @@ static const u16 sGalladeFormSpeciesIdTable[] = {
 static const u16 sSableyeFormSpeciesIdTable[] = {
     SPECIES_SABLEYE,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_SABLEYE_MEGA,
+    //SPECIES_SABLEYE_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1094,7 +1094,7 @@ static const u16 sSableyeFormSpeciesIdTable[] = {
 static const u16 sMawileFormSpeciesIdTable[] = {
     SPECIES_MAWILE,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_MAWILE_MEGA,
+    //SPECIES_MAWILE_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1104,7 +1104,7 @@ static const u16 sMawileFormSpeciesIdTable[] = {
 static const u16 sAggronFormSpeciesIdTable[] = {
     SPECIES_AGGRON,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_AGGRON_MEGA,
+    //SPECIES_AGGRON_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1114,7 +1114,7 @@ static const u16 sAggronFormSpeciesIdTable[] = {
 static const u16 sMedichamFormSpeciesIdTable[] = {
     SPECIES_MEDICHAM,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_MEDICHAM_MEGA,
+    //SPECIES_MEDICHAM_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1124,7 +1124,7 @@ static const u16 sMedichamFormSpeciesIdTable[] = {
 static const u16 sManectricFormSpeciesIdTable[] = {
     SPECIES_MANECTRIC,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_MANECTRIC_MEGA,
+    //SPECIES_MANECTRIC_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1134,7 +1134,7 @@ static const u16 sManectricFormSpeciesIdTable[] = {
 static const u16 sSharpedoFormSpeciesIdTable[] = {
     SPECIES_SHARPEDO,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_SHARPEDO_MEGA,
+    //SPECIES_SHARPEDO_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1144,7 +1144,7 @@ static const u16 sSharpedoFormSpeciesIdTable[] = {
 static const u16 sCameruptFormSpeciesIdTable[] = {
     SPECIES_CAMERUPT,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_CAMERUPT_MEGA,
+    //SPECIES_CAMERUPT_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1154,7 +1154,7 @@ static const u16 sCameruptFormSpeciesIdTable[] = {
 static const u16 sAltariaFormSpeciesIdTable[] = {
     SPECIES_ALTARIA,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_ALTARIA_MEGA,
+    //SPECIES_ALTARIA_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1174,7 +1174,7 @@ static const u16 sCastformFormSpeciesIdTable[] = {
 static const u16 sBanetteFormSpeciesIdTable[] = {
     SPECIES_BANETTE,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_BANETTE_MEGA,
+    //SPECIES_BANETTE_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1184,7 +1184,7 @@ static const u16 sBanetteFormSpeciesIdTable[] = {
 static const u16 sChimechoFormSpeciesIdTable[] = {
     SPECIES_CHIMECHO,
 #if P_GEN_9_MEGA_EVOLUTIONS
-    SPECIES_CHIMECHO_MEGA,
+    //SPECIES_CHIMECHO_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1194,7 +1194,7 @@ static const u16 sChimechoFormSpeciesIdTable[] = {
 static const u16 sAbsolFormSpeciesIdTable[] = {
     SPECIES_ABSOL,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_ABSOL_MEGA,
+    //SPECIES_ABSOL_MEGA,
 #endif
 #if P_GEN_9_MEGA_EVOLUTIONS
     SPECIES_ABSOL_MEGA_Z,
@@ -1207,7 +1207,7 @@ static const u16 sAbsolFormSpeciesIdTable[] = {
 static const u16 sGlalieFormSpeciesIdTable[] = {
     SPECIES_GLALIE,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_GLALIE_MEGA,
+    //SPECIES_GLALIE_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1225,7 +1225,7 @@ static const u16 sFroslassFormSpeciesIdTable[] = {
 static const u16 sSalamenceFormSpeciesIdTable[] = {
     SPECIES_SALAMENCE,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_SALAMENCE_MEGA,
+    //SPECIES_SALAMENCE_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1235,7 +1235,7 @@ static const u16 sSalamenceFormSpeciesIdTable[] = {
 static const u16 sMetagrossFormSpeciesIdTable[] = {
     SPECIES_METAGROSS,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_METAGROSS_MEGA,
+    //SPECIES_METAGROSS_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1245,7 +1245,7 @@ static const u16 sMetagrossFormSpeciesIdTable[] = {
 static const u16 sLatiasFormSpeciesIdTable[] = {
     SPECIES_LATIAS,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_LATIAS_MEGA,
+    //SPECIES_LATIAS_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1255,7 +1255,7 @@ static const u16 sLatiasFormSpeciesIdTable[] = {
 static const u16 sLatiosFormSpeciesIdTable[] = {
     SPECIES_LATIOS,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_LATIOS_MEGA,
+    //SPECIES_LATIOS_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1285,7 +1285,7 @@ static const u16 sGroudonFormSpeciesIdTable[] = {
 static const u16 sRayquazaFormSpeciesIdTable[] = {
     SPECIES_RAYQUAZA,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_RAYQUAZA_MEGA,
+    //SPECIES_RAYQUAZA_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1305,7 +1305,7 @@ static const u16 sDeoxysFormSpeciesIdTable[] = {
 static const u16 sStaraptorFormSpeciesIdTable[] = {
     SPECIES_STARAPTOR,
 #if P_GEN_9_MEGA_EVOLUTIONS
-    SPECIES_STARAPTOR_MEGA,
+    //SPECIES_STARAPTOR_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1360,7 +1360,7 @@ static const u16 sGastrodonFormSpeciesIdTable[] = {
 static const u16 sLopunnyFormSpeciesIdTable[] = {
     SPECIES_LOPUNNY,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_LOPUNNY_MEGA,
+    //SPECIES_LOPUNNY_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1370,7 +1370,7 @@ static const u16 sLopunnyFormSpeciesIdTable[] = {
 static const u16 sGarchompFormSpeciesIdTable[] = {
     SPECIES_GARCHOMP,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_GARCHOMP_MEGA,
+    //SPECIES_GARCHOMP_MEGA,
 #endif
 #if P_GEN_9_MEGA_EVOLUTIONS
     SPECIES_GARCHOMP_MEGA_Z,
@@ -1383,7 +1383,7 @@ static const u16 sGarchompFormSpeciesIdTable[] = {
 static const u16 sLucarioFormSpeciesIdTable[] = {
     SPECIES_LUCARIO,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_LUCARIO_MEGA,
+    //SPECIES_LUCARIO_MEGA,
 #endif
 #if P_GEN_9_MEGA_EVOLUTIONS
     SPECIES_LUCARIO_MEGA_Z,
@@ -1396,7 +1396,7 @@ static const u16 sLucarioFormSpeciesIdTable[] = {
 static const u16 sAbomasnowFormSpeciesIdTable[] = {
     SPECIES_ABOMASNOW,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_ABOMASNOW_MEGA,
+    //SPECIES_ABOMASNOW_MEGA,
 #endif
     FORM_SPECIES_END,
 };
@@ -1529,7 +1529,7 @@ static const u16 sExcadrillFormSpeciesIdTable[] = {
 static const u16 sAudinoFormSpeciesIdTable[] = {
     SPECIES_AUDINO,
 #if P_MEGA_EVOLUTIONS
-    SPECIES_AUDINO_MEGA,
+    //SPECIES_AUDINO_MEGA,
 #endif
     FORM_SPECIES_END,
 };

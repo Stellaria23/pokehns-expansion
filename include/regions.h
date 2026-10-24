@@ -13,12 +13,21 @@ static inline enum Region GetRegionForSectionId(u32 sectionId)
     // Must precede the Johto test: the Hisui mapsecs sit inside the Johto range.
     if (sectionId >= HISUI_MAPSEC_START && sectionId <= HISUI_MAPSEC_END)
         return REGION_HISUI;
-    if (sectionId >= JOHTO_MAPSEC_START && sectionId <= JOHTO_MAPSEC_END)
+    if ((sectionId >= JOHTO_MAPSEC_START && sectionId <= JOHTO_MAPSEC_END) || sectionId == MAPSEC_CHALLENGE_PLAZA)
         return REGION_JOHTO;
     if (sectionId >= KANTO_MAPSEC_START && sectionId <= KANTO_MAPSEC_END)
         return REGION_KANTO;
     if (sectionId >= ALOLA_MAPSEC_START && sectionId <= ALOLA_MAPSEC_END)
         return REGION_ALOLA;
+    if (sectionId == MAPSEC_MYSTERY_ONE || 
+        sectionId == MAPSEC_MYSTERY_KINDLE ||
+        sectionId == MAPSEC_MYSTERY_BEACH ||
+        sectionId == MAPSEC_MYSTERY_TWO ||
+        sectionId == MAPSEC_MYSTERY_BRINK ||
+        sectionId == MAPSEC_MYSTERY_BRIDGE ||
+        sectionId == MAPSEC_MYSTERY_THREE ||
+        sectionId == MAPSEC_MYSTERY_FOREST)
+        return REGION_GALAR;
     return REGION_HOENN;
 #else
     if (sectionId >= KANTO_MAPSEC_START && sectionId < MAPSEC_SPECIAL_AREA)

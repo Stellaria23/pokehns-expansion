@@ -1,0 +1,81 @@
+{
+  "id": "MAP_MYSTERY_ONE_HNS",
+  "name": "MysteryOne_hns",
+  "layout": "LAYOUT_MYSTERY_ONE_HNS",
+  "music": "MUS_RG_SEVII_123",
+  "region_map_section": "MAPSEC_MYSTERY_ONE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_TOWN",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_MYSTERY_KINDLE_HNS",
+      "offset": -123,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_MYSTERY_BEACH_HNS",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_MYSTERY_HELPER",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_HNS",
+      "x": 12,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MysteryOne_hns_OldMan",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 14,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_MYSTERY_ONE_TELEPORTER_HOUSE_HNS",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MysteryOne_hns_EventScript_Sign"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MysteryOne_hns_EventScript_Sign2"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MysteryOne_hns_EventScript_DoorLocked"
+    }
+  ],
+  "game_version": "hns",
+  "region": "REGION_GALAR"
+}
