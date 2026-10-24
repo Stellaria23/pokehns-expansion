@@ -340,6 +340,14 @@ struct ChallengeSettings
     u8 tx_Features_ShinyChance:4;
 };
 
+struct PokeRide
+{
+    u16 monGfxId;           // Current mon graphicsId
+    u16 desiredMonGfxId;    // Desired mon graphicsId
+    u8 flyingHeight:6;
+    bool8 flyingState:1;
+};
+
 struct SaveBlock3
 {
     struct SiiRtcInfo fakeRTC;
@@ -358,6 +366,7 @@ struct SaveBlock3
 #endif
     struct ChallengeSettings challengeSettings;
     u16 registeredItemHold;
+    struct PokeRide PokeRide;
 }; /* max size 1624 bytes */
 
 extern struct SaveBlock3 *gSaveBlock3Ptr;

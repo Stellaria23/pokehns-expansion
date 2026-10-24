@@ -85,6 +85,7 @@
 #include "constants/vars_hns.h"
 #include "nuzlocke.h"
 #include "pokemon_storage_system.h"
+#include "pokeride.h"
 
 STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
@@ -1044,6 +1045,8 @@ void StoreInitialPlayerAvatarState(void)
         sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_SURFING;
     else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_UNDERWATER))
         sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_UNDERWATER;
+    else if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_RIDING))
+        sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_RIDING;
     else
         sInitialPlayerAvatarState.transitionFlags = PLAYER_AVATAR_FLAG_ON_FOOT;
 }
@@ -1076,6 +1079,8 @@ static u8 GetAdjustedInitialTransitionFlags(struct InitialPlayerAvatarState *pla
         return PLAYER_AVATAR_FLAG_MACH_BIKE;
     else if (playerStruct->transitionFlags != PLAYER_AVATAR_FLAG_ACRO_BIKE)
         return PLAYER_AVATAR_FLAG_ON_FOOT;
+    else if (playerStruct->transitionFlags == PLAYER_AVATAR_FLAG_RIDING)
+        return PLAYER_AVATAR_FLAG_RIDING;
     else
         return PLAYER_AVATAR_FLAG_ACRO_BIKE;
 }
@@ -1989,6 +1994,7 @@ void CB2_NewGame(void)
     ResetInitialPlayerAvatarState();
     PlayTimeCounter_Start();
     ScriptContext_Init();
+    PokeRide_Init();
     UnlockPlayerFieldControls();
     if (IS_FRLG || IS_HNS)
         gFieldCallback = FieldCB_WarpExitFadeFromBlack;
@@ -2111,6 +2117,7 @@ static void CB2_LoadMapOnReturnToFieldCableClub(void)
 
 void CB2_ReturnToField(void)
 {
+    PokeRide_ResetSprites();
     if (IsOverworldLinkActive() == TRUE)
     {
         SetMainCallback2(CB2_ReturnToFieldLink);
@@ -2221,6 +2228,7 @@ void CB2_ContinueSavedGame(void)
 
     PlayTimeCounter_Start();
     ScriptContext_Init();
+    PokeRide_Init();
     UnlockPlayerFieldControls();
     gExitStairsMovementDisabled = TRUE;
     InitMatchCallCounters();

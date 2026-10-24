@@ -53,6 +53,7 @@
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
+#include "pokeride.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 #if IS_FRLG
@@ -297,6 +298,7 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetDexNav();
     ClearFollowerNPCData();
+    ClearPokeRideData();
 
     // Sync engine flags from restored challenge settings
     if (!gSaveBlock3Ptr->challengeSettings.tx_Mode_Mints)

@@ -1385,6 +1385,8 @@ enum PlayerSpeed GetPlayerSpeed(void)
         return PLAYER_SPEED_FASTER;
     else if (gPlayerAvatar.flags & (PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_DASH))
         return PLAYER_SPEED_FAST;
+    else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_RIDING)
+        return PLAYER_SPEED_FAST;
     else
         return PLAYER_SPEED_NORMAL;
 }

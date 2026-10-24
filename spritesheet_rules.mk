@@ -32,6 +32,9 @@ $(OBJEVENTGFXDIR)/people/brendan/watering.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/brendan/underwater.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/brendan/riding.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 
 $(OBJEVENTGFXDIR)/people/red/red_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
@@ -53,6 +56,9 @@ $(OBJEVENTGFXDIR)/people/red/red_surf.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/red/red_vs_seeker_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/red/red_riding.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 	
 
 $(OBJEVENTGFXDIR)/people/leaf/green_bike.4bpp: %.4bpp: %.png
@@ -75,6 +81,9 @@ $(OBJEVENTGFXDIR)/people/leaf/green_surf.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/leaf/green_vs_seeker_bike.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/leaf/green_riding.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 # HnS object event sprites
 $(OBJEVENTGFXDIR)/people/attendant_f_hns.4bpp: %.4bpp: %.png
@@ -489,6 +498,9 @@ $(OBJEVENTGFXDIR)/people/gold/watering_hns.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/gold/underwater_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/gold/riding_hns.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/kris/walking_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
@@ -515,6 +527,9 @@ $(OBJEVENTGFXDIR)/people/kris/watering_hns.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/kris/underwater_hns.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/kris/riding_hns.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 
 $(OBJEVENTGFXDIR)/people/elite_four/drake.4bpp: %.4bpp: %.png
@@ -606,6 +621,9 @@ $(OBJEVENTGFXDIR)/people/may/watering.4bpp: %.4bpp: %.png
 
 $(OBJEVENTGFXDIR)/people/may/underwater.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/may/riding.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 4
 
 
 $(OBJEVENTGFXDIR)/people/ruby_sapphire_brendan/walking.4bpp: %.4bpp: %.png

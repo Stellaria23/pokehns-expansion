@@ -16490,6 +16490,19 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_FishingMagnet,
         .iconPalette = gItemIconPalette_Magnet,
     },
+
+    [ITEM_RIDE_CAPSULE] =
+    {
+        .name = ITEM_NAME("RIDE CAPSULE"),
+        .price = 0,
+        .description = sQuestionMarksDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_RideCapsule,
+        .iconPic = gItemIcon_AbilityCapsule,
+        .iconPalette = gItemIconPalette_AbilityCapsule,
+    },
 };
 
 #undef ITEM_NAME
