@@ -728,4 +728,7 @@ const u16 gMetatileAttributes_ArceusRoom_Hns[] = INCBIN_U16("data/tilesets/secon
 const u16 gMetatiles_MtEmber_Hns[] = INCBIN_U16("data/tilesets/secondary/mt_ember_hns/metatiles.bin");
 const u16 gMetatileAttributes_MtEmber_Hns[] = INCBIN_U16("data/tilesets/secondary/mt_ember_hns/metatile_attributes.bin");
 
+const u16 gMetatiles_SeviiIslands123hns[] = INCBIN_U16("data/tilesets/secondary/sevii_islands_123_hns/metatiles.bin");
+const u16 gMetatileAttributes_SeviiIslands123hns[] = INCBIN_U16("data/tilesets/secondary/sevii_islands_123_hns/metatile_attributes.bin");
+
 #endif // IS_FRLG || IS_HNS

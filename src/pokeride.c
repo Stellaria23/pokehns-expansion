@@ -14,6 +14,7 @@
 #include "constants/field_effects.h"
 #include "constants/layouts.h"
 #include "constants/songs.h"
+#include "overworld.h"
 
 enum
 {
@@ -285,6 +286,8 @@ void GetOnOffPokeRide()
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_RIDING))
     {
         SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
+        Overworld_ClearSavedMusic();
+        Overworld_PlaySpecialMapMusic();
     }
     else
     {
@@ -292,6 +295,8 @@ void GetOnOffPokeRide()
         {
             SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_RIDING);
             PlayRideMonCry();
+            Overworld_SetSavedMusic(IS_HNS ? MUS_HG_MYSTERY_GIFT : IS_FRLG ? MUS_RG_CYCLING : MUS_CYCLING);
+            Overworld_ChangeMusicTo(IS_HNS ? MUS_HG_MYSTERY_GIFT : IS_FRLG ? MUS_RG_CYCLING : MUS_CYCLING);
         }
         else
         {
@@ -1034,17 +1039,6 @@ static u8 CheckForPlayerAvatarCollision(enum Direction direction)
     s16 y = playerObjEvent->currentCoords.y;
     MoveCoords(direction, &x, &y);
     return CheckForObjectEventCollision(playerObjEvent, x, y, direction, MapGridGetMetatileBehaviorAt(x, y));
-}
-
-static bool8 AreElevationsCompatible(u8 a, u8 b)
-{
-    if (a == 0 || b == 0)
-        return TRUE;
-
-    if (a != b)
-        return FALSE;
-
-    return TRUE;
 }
 
 static bool8 CheckNonPlayerObjectAt(struct ObjectEvent *playerObjEvent, s16 x, s16 y)

@@ -1858,6 +1858,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+	.include "data/scripts/wild_encounter.inc"
 	
 
 .if IS_HNS
@@ -2415,3 +2416,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/MysteryThree_hns/scripts.inc"
 
 	.include "data/maps/MysteryForest/scripts.inc"
+
+	.include "data/maps/SecretRuins_hns/scripts.inc"

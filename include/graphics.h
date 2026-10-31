@@ -3636,4 +3636,8 @@ extern const u16 gBattleIcons_Pal2[];
 extern const u32 gGhostFrontPic[];
 extern const u16 gGhostPalette[];
 
+extern const u32 gItemIcon_RideFlute[];
+extern const u16 gItemIcon_RideFlutePalette[];
+
+
 #endif //GUARD_GRAPHICS_H

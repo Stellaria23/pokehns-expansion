@@ -2764,6 +2764,14 @@
       "width": 1,
       "x": 0,
       "y": 14
+    },
+    {
+      "height": 1,
+      "id": "MAPSEC_SECRET_RUINS",
+      "name": "SECRET RUINS",
+      "width": 1,
+      "x": 6,
+      "y": 6
     }
   ]
 }

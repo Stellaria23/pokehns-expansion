@@ -66,7 +66,7 @@ Debug_CheatStart::
 	setflag FLAG_LANDMARK_BATTLE_FRONTIER
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
 	clearflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
-	additem ITEM_RIDE_CAPSULE
+	additem ITEM_RIDE_FLUTE
 	setflag FLAG_SYS_POKERIDE_JUMP
 	setflag FLAG_SYS_POKERIDE_SURF
 	setflag FLAG_SYS_POKERIDE_FLY
@@ -251,6 +251,8 @@ Debug_EventScript_Script_6::
 	end
 
 Debug_EventScript_Script_7::
+	setflag FLAG_SEEN_ULTRA_BEASTS
+	special AddRoamer
 	release
 	end
 

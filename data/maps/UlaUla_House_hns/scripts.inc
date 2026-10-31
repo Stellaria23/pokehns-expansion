@@ -43,6 +43,8 @@ Alola_Ulaula_House_Phant_32:
 	msgbox Alola_Ulaula_House_Phant_Text_4
 	waitfanfare
 	msgbox Alola_Ulaula_House_Phant_Text_5, MSGBOX_AUTOCLOSE
+	setflag FLAG_SEEN_ULTRA_BEASTS
+	special AddRoamer
 	release
 	end
 

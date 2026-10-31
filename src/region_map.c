@@ -284,6 +284,7 @@ static const struct RegionMapLocation sRegionMapEntries_Johto[] = {
     [MAPSEC_MYSTERY_FOREST] = { 0, 14, 1, 1, COMPOUND_STRING("MYSTERY FOREST")},
     [MAPSEC_FISHER_NEST_HNS] = {7, 13, 1, 1, COMPOUND_STRING("FISHER'S NEST")},
     [MAPSEC_MYSTERY_THREE] = { 0, 14, 1, 1, COMPOUND_STRING("MYSTERY THREE")},
+    [MAPSEC_SECRET_RUINS] = { 6,  6,  1, 1, COMPOUND_STRING("SECRET RUINS")},
 };
 #endif
 

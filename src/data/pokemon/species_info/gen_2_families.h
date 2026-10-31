@@ -1532,7 +1532,6 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .backAnimId = BACK_ANIM_V_STRETCH,
         .palette = gMonPalette_Chinchou,
         .shinyPalette = gMonShinyPalette_Chinchou,
-        .shinyPaletteModern = gMonShinyPaletteModern_Chinchou,
         .iconSprite = gMonIcon_Chinchou,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -1545,8 +1544,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             TRACKS_SPOT,
             sAnimTable_Following,
             gOverworldPalette_Chinchou,
-            gShinyOverworldPalette_Chinchou,
-            gShinyModernOverworldPalette_Chinchou
+            gShinyOverworldPalette_Chinchou
         )
         .levelUpLearnset = sChinchouLevelUpLearnset,
         .teachableLearnset = sChinchouTeachableLearnset,
@@ -1606,7 +1604,6 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .backAnimId = BACK_ANIM_SHAKE_FLASH_YELLOW,
         .palette = gMonPalette_Lanturn,
         .shinyPalette = gMonShinyPalette_Lanturn,
-        .shinyPaletteModern = gMonShinyPaletteModern_Lanturn,
         .iconSprite = gMonIcon_Lanturn,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -1619,8 +1616,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             TRACKS_SPOT,
             sAnimTable_Following,
             gOverworldPalette_Lanturn,
-            gShinyOverworldPalette_Lanturn,
-            gShinyModernOverworldPalette_Lanturn
+            gShinyOverworldPalette_Lanturn
         )
         .levelUpLearnset = sLanturnLevelUpLearnset,
         .teachableLearnset = sLanturnTeachableLearnset,
@@ -1982,7 +1978,6 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
         .palette = gMonPalette_Xatu,
         .shinyPalette = gMonShinyPalette_Xatu,
-        .shinyPaletteModern = gMonShinyPaletteModern_Xatu,
         .iconSprite = gMonIcon_Xatu,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 0 : 1,
 #if P_GENDER_DIFFERENCES
@@ -1999,8 +1994,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Xatu,
-            gShinyOverworldPalette_Xatu,
-            gShinyModernOverworldPalette_Xatu
+            gShinyOverworldPalette_Xatu
         )
         OVERWORLD_FEMALE(
             sPicTable_XatuF,
@@ -5517,7 +5511,6 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .backAnimId = BACK_ANIM_JOLT_RIGHT,
         .palette = gMonPalette_Heracross,
         .shinyPalette = gMonShinyPalette_Heracross,
-        .shinyPaletteModern = gMonShinyPaletteModern_Heracross,
         .iconSprite = gMonIcon_Heracross,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 2 : 0,
 #if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
@@ -5536,8 +5529,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Heracross,
-            gShinyOverworldPalette_Heracross,
-            gShinyModernOverworldPalette_Heracross
+            gShinyOverworldPalette_Heracross
         )
         OVERWORLD_FEMALE(
             sPicTable_HeracrossF,
@@ -7689,7 +7681,6 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .backAnimId = BACK_ANIM_JOLT_RIGHT,
         .palette = gMonPalette_Phanpy,
         .shinyPalette = gMonShinyPalette_Phanpy,
-        .shinyPaletteModern = gMonShinyPaletteModern_Phanpy,
         .iconSprite = gMonIcon_Phanpy,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
@@ -7702,8 +7693,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Phanpy,
-            gShinyOverworldPalette_Phanpy,
-            gShinyModernOverworldPalette_Phanpy
+            gShinyOverworldPalette_Phanpy
         )
         .levelUpLearnset = sPhanpyLevelUpLearnset,
         .teachableLearnset = sPhanpyTeachableLearnset,

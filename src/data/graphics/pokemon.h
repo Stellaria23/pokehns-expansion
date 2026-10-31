@@ -27561,5 +27561,12 @@ const u32 gMonBackPic_CrystalOnix[] = INCBIN_U32("graphics/pokemon/onix/crystal/
     const u16 gShinyPaletteModern_Onix[] = INCBIN_U16("graphics/pokemon/onix/crystal/normal.gbapal");
     const u16 gShinyPaletteModern_Foongus[] = INCBIN_U16("graphics/pokemon/foongus/sus/normal.gbapal");
     const u16 gShinyPaletteModern_Amoonguss[] = INCBIN_U16("graphics/pokemon/amoonguss/sus/normal.gbapal");
+    const u16 gShinyPaletteModern_Slowbro[] = INCBIN_U16("graphics/pokemon/slowbro/gyaru/normal.gbapal");
+    const u16 gShinyPaletteModern_Exeggutor[] = INCBIN_U16("graphics/pokemon/exeggutor/maid/normal.gbapal");
+    const u16 gShinyPaletteModern_Lapras[] = INCBIN_U16("graphics/pokemon/lapras/summer/normal.gbapal");
+    const u16 gShinyPaletteModern_Camerupt[] = INCBIN_U16("graphics/pokemon/camerupt/magma/normal.gbapal");
+    const u16 gShinyPaletteModern_Sharpedo[] = INCBIN_U16("graphics/pokemon/sharpedo/aqua/normal.gbapal");
+    const u16 gShinyPaletteModern_Drapion[] = INCBIN_U16("graphics/pokemon/drapion/summer/normal.gbapal");
+
 
     

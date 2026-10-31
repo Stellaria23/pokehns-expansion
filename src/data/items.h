@@ -16491,17 +16491,19 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_Magnet,
     },
 
-    [ITEM_RIDE_CAPSULE] =
+    [ITEM_RIDE_FLUTE] =
     {
-        .name = ITEM_NAME("RIDE CAPSULE"),
+        .name = ITEM_NAME("RIDE FLUTE"),
         .price = 0,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "A flute made\n"
+            "for riding MOéMON."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_RideCapsule,
-        .iconPic = gItemIcon_AbilityCapsule,
-        .iconPalette = gItemIconPalette_AbilityCapsule,
+        .iconPic = gItemIcon_RideFlute,
+        .iconPalette = gItemIcon_RideFlutePalette,
     },
 };
 

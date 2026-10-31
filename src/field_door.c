@@ -203,6 +203,10 @@ static const u8 sDoorAnimTiles_AlolaDoor[] = INCBIN_U8("graphics/door_anims/alol
 static const u8 sDoorAnimTiles_AlolaPokecenterDoor[] = INCBIN_U8("graphics/door_anims/alolapokecenter_hns.4bpp");
 static const u8 sDoorAnimTiles_TeleporterHns[] = INCBIN_U8("graphics/door_anims/teleporter.4bpp");
 
+static const u8 sDoorAnimTiles_Sevii123[] = INCBIN_U8("graphics/door_anims/sevii_123.4bpp");
+static const u8 sDoorAnimTiles_JoyfulGameCorner[] = INCBIN_U8("graphics/door_anims/joyful_game_corner.4bpp");
+static const u8 sDoorAnimTiles_OneIslandPokeCenter[] = INCBIN_U8("graphics/door_anims/one_island_poke_center.4bpp");
+
 #endif // IS_HNS
 
 static const struct DoorAnimFrame sDoorOpenAnimFrames[] =
@@ -428,6 +432,10 @@ static const u8 sDoorAnimPalettes_AlolaDoor[] = {2, 2, 2, 2, 2, 2, 2, 2};
 static const u8 sDoorAnimPalettes_TeleporterHns[] = {8, 8, 8, 8, 8, 8, 8, 8};
 static const u8 sDoorAnimPalettes_DragonsDenShrine[] = {12, 12, 12, 12, 12, 12, 12, 12};
 
+static const u8 sDoorAnimPalettes_Sevii123[] = {5, 5, 5, 5, 5, 5, 5, 5};
+static const u8 sDoorAnimPalettes_JoyfulGameCorner[] = {3, 3, 3, 3, 3, 3, 3, 3};
+static const u8 sDoorAnimPalettes_OneIslandPokeCenter[] = {3, 3, 3, 3, 3, 3, 3, 3};
+
 #endif // IS_HNS
 
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
@@ -606,6 +614,9 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
     {METATILE_Alola_Door_Hns,                               &gTileset_AlolaIsland, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_AlolaDoor, sDoorAnimPalettes_AlolaDoor},
     {METATILE_Alola_Pokecenter_Door_Hns,                    &gTileset_AlolaIsland, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_AlolaPokecenterDoor, sDoorAnimPalettes_AlolaDoor},
     {METATILE_DragonDen_Shrine_Door_Hns,                    &gTileset_Cave_DragonsDen_Hns, DOOR_SOUND_NORMAL, 1, sDoorAnimTiles_DojoDoor, sDoorAnimPalettes_DragonsDenShrine},
+    {METATILE_SeviiIslands123_Door,                         &gTileset_SeviiIslands123hns, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_Sevii123, sDoorAnimPalettes_Sevii123},
+    {METATILE_SeviiIslands123_GameCornerDoor,               &gTileset_SeviiIslands123hns, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_JoyfulGameCorner, sDoorAnimPalettes_JoyfulGameCorner},
+    {METATILE_SeviiIslands123_PokeCenterDoor,               &gTileset_SeviiIslands123hns, DOOR_SOUND_NORMAL,  1, sDoorAnimTiles_OneIslandPokeCenter, sDoorAnimPalettes_OneIslandPokeCenter},
 #endif // !IS_FRLG
     {},
 };

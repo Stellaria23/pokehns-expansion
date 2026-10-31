@@ -4556,7 +4556,8 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_HG_OBTAIN_ARCADE_POINTS)  \
     X(MUS_HG_OBTAIN_CASTLE_POINTS)  \
     X(MUS_HG_OBTAIN_B_POINTS)       \
-    X(MUS_HG_WIN_MINIGAME)
+    X(MUS_HG_WIN_MINIGAME)          \
+    X(MUS_BW_GLTERMINAL)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

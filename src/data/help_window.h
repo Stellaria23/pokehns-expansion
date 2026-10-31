@@ -178,11 +178,11 @@ const struct HelpWindow gHelpWindowInfo[] =
     },
     [HELP_MYSTERY_ISLES] =
     {
-        .header = COMPOUND_STRING("OPTIONAL BONUS CONTENT: MYSTERY"),
-        .desc = COMPOUND_STRING("You have now access to optional\n"
-                                "bonus content: the MYSTERY ISLES.\n"
-                                "It is NOT required for story\n"
-                                "or NATIONAL MOéDEX completion.\n"
+        .header = COMPOUND_STRING("OPTIONAL WIP CONTENT: MYSTERY"),
+        .desc = COMPOUND_STRING("This zone is currently a work\n"
+                                "in progress, but you can still\n"
+                                "explore it for new and regional\n"
+                                "MOéMON species.\n"
                                 "\n"
                                 "It's just a bonus. If you want it."
                             ),

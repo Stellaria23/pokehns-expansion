@@ -520,7 +520,6 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
         .palette = gMonPalette_Blaziken,
         .shinyPalette = gMonShinyPalette_Blaziken,
-        .shinyPaletteModern = gMonShinyPaletteModern_Blaziken,
         .iconSprite = gMonIcon_Blaziken,
         .iconPalIndex = 0,
 #if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
@@ -539,8 +538,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Blaziken,
-            gShinyOverworldPalette_Blaziken,
-            gShinyModernOverworldPalette_Blaziken
+            gShinyOverworldPalette_Blaziken
         )
         OVERWORLD_FEMALE(
             sPicTable_BlazikenF,
@@ -6557,6 +6555,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .backAnimId = BACK_ANIM_JOLT_RIGHT,
         .palette = gMonPalette_Sharpedo,
         .shinyPalette = gMonShinyPalette_Sharpedo,
+        .shinyPaletteModern = gShinyPaletteModern_Sharpedo,
         .iconSprite = gMonIcon_Sharpedo,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -6569,7 +6568,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             TRACKS_NONE,
             sAnimTable_Following,
             gOverworldPalette_Sharpedo,
-            gShinyOverworldPalette_Sharpedo
+            gShinyOverworldPalette_Sharpedo,
+            gOverworldPalette_Sharpedo
         )
         .levelUpLearnset = sSharpedoLevelUpLearnset,
         .teachableLearnset = sSharpedoTeachableLearnset,
@@ -6945,6 +6945,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
         .palette = gMonPalette_Camerupt,
         .shinyPalette = gMonShinyPalette_Camerupt,
+        .shinyPaletteModern = gShinyPaletteModern_Camerupt,
         .iconSprite = gMonIcon_Camerupt,
         .iconPalIndex = 0,
 #if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
@@ -6963,7 +6964,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Camerupt,
-            gShinyOverworldPalette_Camerupt
+            gShinyOverworldPalette_Camerupt,
+            gOverworldPalette_Camerupt
         )
         OVERWORLD_FEMALE(
             sPicTable_CameruptF,
@@ -12375,7 +12377,6 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .backAnimId = BACK_ANIM_V_SHAKE,
         .palette = gMonPalette_Regice,
         .shinyPalette = gMonShinyPalette_Regice,
-        .shinyPaletteModern = gMonShinyPaletteModern_Regice,
         .iconSprite = gMonIcon_Regice,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 2 : 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -12388,8 +12389,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Regice,
-            gShinyOverworldPalette_Regice,
-            gShinyModernOverworldPalette_Regice
+            gShinyOverworldPalette_Regice
         )
         .isSubLegendary = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,

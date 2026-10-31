@@ -408,3 +408,25 @@ bool8 CheckCelebi(void)
 
     return TRUE;
 }
+
+bool8 GetSecretCode(void)
+{
+    if (GetMonData(&gPlayerParty[0], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_UNOWN_S)
+    {
+        if (GetMonData(&gPlayerParty[1], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_UNOWN_E)
+        {
+            if (GetMonData(&gPlayerParty[2], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_UNOWN_C)
+            {
+                if (GetMonData(&gPlayerParty[3], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_UNOWN_R)
+                {
+                    if (GetMonData(&gPlayerParty[4], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_UNOWN_E)
+                    {
+                        if (GetMonData(&gPlayerParty[5], MON_DATA_SPECIES_OR_EGG, 0) == SPECIES_UNOWN_T)
+                            return TRUE;
+                    }
+                }
+            }
+        }
+    }
+    return FALSE;
+}

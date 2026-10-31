@@ -152,7 +152,9 @@ CeruleanCity_Text_GymSign:
 	.string "The Tomboyish Mermaid$"
 
 CeruleanCity_Text_BikeShopSign:
-	.string "There's a notice here…\p"
+	.string "CERULEAN CITY\n"
+	.string "BRAND NEW RIDING SCHOOL\p"
+	.string "There's also a notice here…\p"
 	.string "The BIKE SHOP has moved to\n"
 	.string "GOLDENROD CITY in JOHTO…$"
 

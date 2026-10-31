@@ -2711,4 +2711,15 @@ const struct Tileset gTileset_MtEmber_Hns =
     .metatileAttributes = gMetatileAttributes_MtEmber_Hns,
     .callback = InitTilesetAnim_MtEmber_Hns,
 };
+
+const struct Tileset gTileset_SeviiIslands123hns =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SeviiIslands123hns,
+    .palettes = gTilesetPalettes_SeviiIslands123hns,
+    .metatiles = gMetatiles_SeviiIslands123hns,
+    .metatileAttributes = gMetatileAttributes_SeviiIslands123hns,
+    .callback = NULL,
+};
 #endif // IS_FRLG || IS_HNS

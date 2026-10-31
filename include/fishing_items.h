@@ -16,13 +16,16 @@ static const u16 sFishingItems_Old[] =
 };
 
 
-
 static const u16 sFishingItems_Good[] =
 {
     ITEM_HYPER_POTION,
     ITEM_ULTRA_BALL,
     ITEM_REVIVE,
     ITEM_ETHER,
+    ITEM_SKULL_FOSSIL,
+    ITEM_ARMOR_FOSSIL,
+    ITEM_COVER_FOSSIL,
+    ITEM_PLUME_FOSSIL,
 };
 
 
@@ -37,8 +40,6 @@ static const u16 sFishingItems_Super[] =
     ITEM_CALCIUM,
     ITEM_CARBOS,
     ITEM_ZINC,
-    ITEM_COVER_FOSSIL,
-    ITEM_PLUME_FOSSIL,
 };
 
 

@@ -29,6 +29,18 @@ const u32 gMonFrontPic_FoongusSus[] = INCBIN_U32("graphics/pokemon/foongus/sus/a
 const u32 gMonBackPic_FoongusSus[] = INCBIN_U32("graphics/pokemon/foongus/sus/back.4bpp.smol");
 const u32 gMonFrontPic_AmoongussSus[] = INCBIN_U32("graphics/pokemon/amoonguss/sus/anim_front.4bpp.smol");
 const u32 gMonBackPic_AmoongussSus[] = INCBIN_U32("graphics/pokemon/amoonguss/sus/back.4bpp.smol");
+const u32 gMonFrontPic_SlowbroGyaru[] = INCBIN_U32("graphics/pokemon/slowbro/gyaru/anim_front.4bpp.smol");
+const u32 gMonBackPic_SlowbroGyaru[] = INCBIN_U32("graphics/pokemon/slowbro/gyaru/back.4bpp.smol");
+const u32 gMonFrontPic_LaprasSummer[] = INCBIN_U32("graphics/pokemon/lapras/summer/anim_front.4bpp.smol");
+const u32 gMonBackPic_LaprasSummer[] = INCBIN_U32("graphics/pokemon/lapras/summer/back.4bpp.smol");
+const u32 gMonFrontPic_ExeggutorMaid[] = INCBIN_U32("graphics/pokemon/exeggutor/maid/anim_front.4bpp.smol");
+const u32 gMonBackPic_ExeggutorMaid[] = INCBIN_U32("graphics/pokemon/exeggutor/maid/back.4bpp.smol");
+const u32 gMonFrontPic_CameruptMagma[] = INCBIN_U32("graphics/pokemon/camerupt/magma/anim_front.4bpp.smol");
+const u32 gMonBackPic_CameruptMagma[] = INCBIN_U32("graphics/pokemon/camerupt/magma/back.4bpp.smol");
+const u32 gMonFrontPic_SharpAqua[] = INCBIN_U32("graphics/pokemon/sharpedo/aqua/anim_front.4bpp.smol");
+const u32 gMonBackPic_SharpAqua[] = INCBIN_U32("graphics/pokemon/sharpedo/aqua/back.4bpp.smol");
+const u32 gMonFrontPic_DrapionSummer[] = INCBIN_U32("graphics/pokemon/drapion/summer/anim_front.4bpp.smol");
+const u32 gMonBackPic_DrapionSummer[] = INCBIN_U32("graphics/pokemon/drapion/summer/back.4bpp.smol");
 
 
 #define TABLE_READ_K(tableVal)((tableVal & 7))
@@ -1181,6 +1193,24 @@ void LoadSpecialPokePicIsEgg(void *dest, s32 species, u32 personality, bool8 isF
                     case SPECIES_AMOONGUSS:
                         DecompressDataWithHeaderWram(gMonFrontPic_AmoongussSus, dest);
                         break;
+                    case SPECIES_SLOWBRO:
+                        DecompressDataWithHeaderWram(gMonFrontPic_SlowbroGyaru, dest);
+                        break;
+                    case SPECIES_LAPRAS:
+                        DecompressDataWithHeaderWram(gMonFrontPic_LaprasSummer, dest);
+                        break;
+                    case SPECIES_EXEGGUTOR:
+                        DecompressDataWithHeaderWram(gMonFrontPic_ExeggutorMaid, dest);
+                        break;
+                    case SPECIES_CAMERUPT:
+                        DecompressDataWithHeaderWram(gMonFrontPic_CameruptMagma, dest);
+                        break;
+                    case SPECIES_SHARPEDO:
+                        DecompressDataWithHeaderWram(gMonFrontPic_SharpAqua, dest);
+                        break;
+                    case SPECIES_DRAPION:
+                        DecompressDataWithHeaderWram(gMonFrontPic_DrapionSummer, dest);
+                        break;
                     default:
                         DecompressDataWithHeaderWram(gSpeciesInfo[species].frontPic, dest);
                         break;
@@ -1216,6 +1246,24 @@ void LoadSpecialPokePicIsEgg(void *dest, s32 species, u32 personality, bool8 isF
                         break;
                     case SPECIES_AMOONGUSS:
                         DecompressDataWithHeaderWram(gMonBackPic_AmoongussSus, dest);
+                        break;
+                    case SPECIES_SLOWBRO:
+                        DecompressDataWithHeaderWram(gMonBackPic_SlowbroGyaru, dest);
+                        break;
+                    case SPECIES_LAPRAS:
+                        DecompressDataWithHeaderWram(gMonBackPic_LaprasSummer, dest);
+                        break;
+                    case SPECIES_EXEGGUTOR:
+                        DecompressDataWithHeaderWram(gMonBackPic_ExeggutorMaid, dest);
+                        break;
+                    case SPECIES_CAMERUPT:
+                        DecompressDataWithHeaderWram(gMonBackPic_CameruptMagma, dest);
+                        break;
+                    case SPECIES_SHARPEDO:
+                        DecompressDataWithHeaderWram(gMonBackPic_SharpAqua, dest);
+                        break;
+                    case SPECIES_DRAPION:
+                        DecompressDataWithHeaderWram(gMonBackPic_DrapionSummer, dest);
                         break;
                     default:
                         DecompressDataWithHeaderWram(gSpeciesInfo[species].backPic, dest);

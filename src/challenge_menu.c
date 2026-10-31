@@ -650,8 +650,8 @@ static const u8 *const sDesc_FrontierBans[] = {
     COMPOUND_STRING("All legendaries are allowed to\nparticipate in the BATTLE FRONTIER."),
 };
 static const u8 *const sDesc_ShinyColor[] = {
-    COMPOUND_STRING("Original shiny color palette for\nall {PKMN}. Default."),
-    COMPOUND_STRING("Some shiny {PKMN} have brand new\ncolor palettes."),
+    COMPOUND_STRING("Original shiny sprites for\nall {PKMN}. Default."),
+    COMPOUND_STRING("Some shiny {PKMN} have brand new\nsprites."),
 };
 static const u8 *const sDesc_FeaturesNext[] = {
     COMPOUND_STRING("Continue to Randomizer options."),

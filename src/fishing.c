@@ -314,6 +314,20 @@ static bool32 Fishing_CheckForBite(struct Task *task)
                 itemPos = (u8)ARRAY_COUNT(sFishingItems_Old);
                 gSpecialVar_ItemId = sFishingItems_Old[Random() % itemPos];
         }
+        if ((gSpecialVar_ItemId == ITEM_SKULL_FOSSIL && FlagGet(FLAG_GET_SKULL_FOSSIL))||
+            (gSpecialVar_ItemId == ITEM_ARMOR_FOSSIL && FlagGet(FLAG_GET_ARMOR_FOSSIL)) ||
+            (gSpecialVar_ItemId == ITEM_COVER_FOSSIL && FlagGet(FLAG_GET_COVER_FOSSIL)) ||
+            (gSpecialVar_ItemId == ITEM_PLUME_FOSSIL && FlagGet(FLAG_GET_PLUME_FOSSIL)))
+            gSpecialVar_ItemId = ITEM_POTION;
+        else if (gSpecialVar_ItemId == ITEM_SKULL_FOSSIL)
+            FlagSet(FLAG_GET_SKULL_FOSSIL);
+        else if (gSpecialVar_ItemId == ITEM_ARMOR_FOSSIL)
+            FlagSet(FLAG_GET_ARMOR_FOSSIL);
+        else if (gSpecialVar_ItemId == ITEM_COVER_FOSSIL)
+            FlagSet(FLAG_GET_COVER_FOSSIL);
+        else if (gSpecialVar_ItemId == ITEM_PLUME_FOSSIL)
+            FlagSet(FLAG_GET_PLUME_FOSSIL);
+
         StringCopy(gStringVar2, ItemId_GetName(gSpecialVar_ItemId));
         switch (GetPocketByItemId(gSpecialVar_ItemId))
         {

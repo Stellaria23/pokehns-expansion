@@ -24,6 +24,15 @@ MysteryTwo_hns_EventScript_Chef::
 	release
 	end
 
+MysteryTwo_hns_EventScript_EvoGirl::
+	lock
+	faceplayer
+	msgbox MysteryOne_hns_Text_EvoGirl, MSGBOX_DEFAULT
+	pokemart MysteryTwo_hns_EvoMart
+	msgbox MysteryTwo_hns_Text_ChefBye, MSGBOX_DEFAULT
+	release
+	end
+
 MysteryTwo_hns_Text_Woman:
 	.string "A lot of MOéMON here\n"
 	.string "come from the GALAR region.\p"
@@ -47,6 +56,9 @@ MysteryTwo_hns_Text_Chef:
 MysteryTwo_hns_Text_ChefBye:
 	.string "Come again!$"
 
+MysteryOne_hns_Text_EvoGirl:
+	.string "Hey, I got some cool\n"
+	.string "items to sell! Interested?$"
 
 	.align 2
 MysteryTwo_hns_SweetMart:
@@ -57,6 +69,16 @@ MysteryTwo_hns_SweetMart:
 	.2byte ITEM_FLOWER_SWEET
 	.2byte ITEM_STAR_SWEET
 	.2byte ITEM_RIBBON_SWEET
+	.2byte ITEM_NONE
+	release
+	end
+
+MysteryTwo_hns_EvoMart:
+	.2byte ITEM_SWEET_APPLE
+	.2byte ITEM_TART_APPLE
+	.2byte ITEM_SYRUPY_APPLE
+	.2byte ITEM_AUSPICIOUS_ARMOR
+	.2byte ITEM_MALICIOUS_ARMOR
 	.2byte ITEM_NONE
 	release
 	end

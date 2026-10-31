@@ -743,6 +743,7 @@ gSongTable::
 	song mus_hg_obtain_castle_points, MUSIC_PLAYER_SE2, 2
 	song mus_hg_obtain_b_points, MUSIC_PLAYER_SE2, 2
 	song mus_hg_win_minigame, MUSIC_PLAYER_SE2, 2
+	song mus_bw_glterminal, MUSIC_PLAYER_SE2, 2
 
 	@ DP music
 	song mus_dp_azure_flute, MUSIC_PLAYER_BGM, 0

@@ -669,8 +669,9 @@
 #define MUS_HG_OBTAIN_CASTLE_POINTS  (HG_MUSIC_START + 0xAD)  // Received Castle Points!
 #define MUS_HG_OBTAIN_B_POINTS       (HG_MUSIC_START + 0xAE)  // Received Battle Points!
 #define MUS_HG_WIN_MINIGAME          (HG_MUSIC_START + 0xAF)  // Cleared Wobbuffet Pop!
+#define MUS_BW_GLTERMINAL            (HG_MUSIC_START + 0xB0)
 
-#define HG_MUSIC_END                 MUS_HG_WIN_MINIGAME
+#define HG_MUSIC_END                 MUS_BW_GLTERMINAL
 
 // DPPt music
 #define DP_MUSIC_START               (HG_MUSIC_END + 1)

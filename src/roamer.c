@@ -15,6 +15,7 @@
 #if IS_HNS
 #include "pokedex.h"
 #endif
+#include "constants/flags.h"
 
 // Despite having a variable to track it, the roamer is
 // hard-coded to only ever be in map group 0
@@ -337,6 +338,13 @@ void InitRoamer(void)
     GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_SUICUNE), FLAG_SET_SEEN);
     TryAddRoamer(SPECIES_RAIKOU, 40, ROAMER_LOC_TABLE_JOHTO);
     TryAddRoamer(SPECIES_ENTEI, 40, ROAMER_LOC_TABLE_JOHTO);
+    if (FlagGet(FLAG_SEEN_ULTRA_BEASTS))
+    {
+        GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_NIHILEGO), FLAG_SET_SEEN);
+        GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_BUZZWOLE), FLAG_SET_SEEN);
+        TryAddRoamer(SPECIES_NIHILEGO, 40, ROAMER_LOC_TABLE_JOHTO);
+        TryAddRoamer(SPECIES_BUZZWOLE, 40, ROAMER_LOC_TABLE_JOHTO);
+    }
 }
 
 void InitKantoRoamers(void)
@@ -351,6 +359,13 @@ void InitKantoRoamers(void)
     {
         GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_LATIOS), FLAG_SET_SEEN);
         TryAddRoamer(SPECIES_LATIOS, 60, ROAMER_LOC_TABLE_KANTO);
+    }
+    if (FlagGet(FLAG_SEEN_ULTRA_BEASTS))
+    {
+        GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_XURKITREE), FLAG_SET_SEEN);
+        GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_CELESTEELA), FLAG_SET_SEEN);
+        TryAddRoamer(SPECIES_XURKITREE, 40, ROAMER_LOC_TABLE_JOHTO);
+        TryAddRoamer(SPECIES_CELESTEELA, 40, ROAMER_LOC_TABLE_JOHTO);
     }
 }
 #else
@@ -733,6 +748,18 @@ void TryShowRoamerFlash(void)
         gTasks[taskId].tFrames = 0;
         gTasks[taskId].tMaxFrames = maxFrames;
     }
+}
+
+void AddRoamer(void)
+{
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_NIHILEGO), FLAG_SET_SEEN);
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_BUZZWOLE), FLAG_SET_SEEN);
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_XURKITREE), FLAG_SET_SEEN);
+    GetSetPokedexFlag(SpeciesToNationalPokedexNum(SPECIES_CELESTEELA), FLAG_SET_SEEN);
+    TryAddRoamer(SPECIES_XURKITREE, 40, ROAMER_LOC_TABLE_JOHTO);
+    TryAddRoamer(SPECIES_CELESTEELA, 40, ROAMER_LOC_TABLE_JOHTO);
+    TryAddRoamer(SPECIES_NIHILEGO, 40, ROAMER_LOC_TABLE_JOHTO);
+    TryAddRoamer(SPECIES_BUZZWOLE, 40, ROAMER_LOC_TABLE_JOHTO);
 }
 
 #undef tSpriteId

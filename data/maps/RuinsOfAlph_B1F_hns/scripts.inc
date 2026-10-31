@@ -1,6 +1,11 @@
 RuinsOfAlph_B1F_hns_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, RuinsOfAlph_B1F_OnLoad
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, RuinsOfAlph_B1F_OnFrame
 	.byte 0
+
+RuinsOfAlph_B1F_OnLoad::
+	call_if_set FLAG_FIND_SECRET_RUINS, RuinsOfAlph_B1F_EventScript_TestOpenNewRoom2
+	end
 
 RuinsOfAlph_B1F_OnFrame::
 	map_script_2 VAR_RUINSOFALPH_STATE, 1, RuinsOfAlph_B1F_EventScript_Presence
@@ -52,6 +57,39 @@ RuinsOfAlph_PuzzleAndRewardChambers_EventScript_GSBALL::
 	finditem ITEM_GS_BALL
 	end
 
+RuinsOfAlph_B1F_Sign_SecretRoomStatue::
+	lock
+	goto_if_set FLAG_FIND_SECRET_RUINS, RuinsOfAlph_B1F_Sign_SecretRoomStatue2
+	msgbox RuinsOfAlph_B1F_Text_SecretRoomStatue, MSGBOX_DEFAULT
+	closemessage
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, RuinsOfAlph_B1F_CheckUnownParty
+	release
+	end
+
+RuinsOfAlph_B1F_Sign_SecretRoomStatue2::
+	msgbox RuinsOfAlph_B1F_Text_SecretRoomStatue2, MSGBOX_DEFAULT
+	release
+	end
+
+RuinsOfAlph_B1F_CheckUnownParty::
+	specialvar VAR_RESULT, GetSecretCode
+	goto_if_eq VAR_RESULT, TRUE, RuinsOfAlph_B1F_EventScript_TestOpenNewRoom
+	release
+	end
+
+RuinsOfAlph_B1F_EventScript_TestOpenNewRoom::
+	playse SE_BANG
+	setflag FLAG_FIND_SECRET_RUINS
+	setmetatile 15, 1, 0x307, FALSE
+	special DrawWholeMapView
+	release
+	end
+
+RuinsOfAlph_B1F_EventScript_TestOpenNewRoom2::
+	setmetatile 15, 1, 0x307, FALSE
+	end
+
 RuinsOfAlph_B1F_Text_Presence:
 	.string "There is a strange presence here.$"
 
@@ -70,3 +108,17 @@ RuinsOfAlph_B1F_Text_Gramps:
 	.string "tombs of kings.\p"
 	.string "Like the pyramids, for\n"
 	.string "instance.$"
+
+RuinsOfAlph_B1F_Text_SecretRoomStatue:
+	.string "There is a note here.\p"
+	.string "THERE IS A SECRET ROOM\n"
+	.string "HIDDEN FROM SIGHT\p"
+	.string "ONLY THE CODE CAN REVEAL\n"
+	.string "ITS ENTRANCE.\p"
+	.string "...There is a smaller\n"
+	.string "note near the bottom.\p"
+	.string "THE CODE IS 'SECRET'.$"
+
+RuinsOfAlph_B1F_Text_SecretRoomStatue2:
+	.string "The code was SECRET.$"
+

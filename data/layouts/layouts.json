@@ -16359,6 +16359,18 @@
       "blockdata_filepath": "data/layouts/MysteryForest/map.bin",
       "game_version": "hns",
       "layout_version": "hns"
+    },
+    {
+      "id": "LAYOUT_SECRET_RUINS_HNS",
+      "name": "SecretRuins_hns_Layout",
+      "width": 12,
+      "height": 11,
+      "primary_tileset": "gTileset_Johto_Building_Hns",
+      "secondary_tileset": "gTileset_RuinsOfAlphWriting_Hns",
+      "border_filepath": "data/layouts/SecretRuins_hns/border.bin",
+      "blockdata_filepath": "data/layouts/SecretRuins_hns/map.bin",
+      "game_version": "hns",
+      "layout_version": "hns"
     }
   ]
 }

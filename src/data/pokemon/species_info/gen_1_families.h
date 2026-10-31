@@ -2843,7 +2843,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_CONCAVE_ARC_SMALL,
         .palette = gMonPalette_Pichu,
         .shinyPalette = gMonShinyPalette_Pichu,
-        .shinyPaletteModern = gMonShinyPaletteModern_Pichu,
         .iconSprite = gMonIcon_Pichu,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 0 : 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
@@ -2856,8 +2855,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Pichu,
-            gShinyOverworldPalette_Pichu,
-            gShinyModernOverworldPalette_Pichu
+            gShinyOverworldPalette_Pichu
         )
         .levelUpLearnset = sPichuLevelUpLearnset,
         .teachableLearnset = sPichuTeachableLearnset,
@@ -4266,7 +4264,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_SHAKE_FLASH_YELLOW,
         .palette = gMonPalette_Raichu,
         .shinyPalette = gMonShinyPalette_Raichu,
-        .shinyPaletteModern = gMonShinyPaletteModern_Raichu,
         .iconSprite = gMonIcon_Raichu,
         .iconPalIndex = 0,
 #if P_GENDER_DIFFERENCES
@@ -4283,8 +4280,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Raichu,
-            gShinyOverworldPalette_Raichu,
-            gShinyModernOverworldPalette_Raichu
+            gShinyOverworldPalette_Raichu
         )
         OVERWORLD_FEMALE(
             sPicTable_RaichuF,
@@ -6832,7 +6828,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_Paras,
         .shinyPalette = gMonShinyPalette_Paras,
-        .shinyPaletteModern = gMonShinyPaletteModern_Paras,
         .iconSprite = gMonIcon_Paras,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
@@ -6845,8 +6840,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_BUG,
             sAnimTable_Following,
             gOverworldPalette_Paras,
-            gShinyOverworldPalette_Paras,
-            gShinyModernOverworldPalette_Paras
+            gShinyOverworldPalette_Paras
         )
         .levelUpLearnset = sParasLevelUpLearnset,
         .teachableLearnset = sParasTeachableLearnset,
@@ -9945,7 +9939,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_Tentacool,
         .shinyPalette = gMonShinyPalette_Tentacool,
-        .shinyPaletteModern = gMonShinyPaletteModern_Tentacool,
         .iconSprite = gMonIcon_Tentacool,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 2 : 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -9958,8 +9951,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_SPOT,
             sAnimTable_Following,
             gOverworldPalette_Tentacool,
-            gShinyOverworldPalette_Tentacool,
-            gShinyModernOverworldPalette_Tentacool
+            gShinyOverworldPalette_Tentacool
         )
         .levelUpLearnset = sTentacoolLevelUpLearnset,
         .teachableLearnset = sTentacoolTeachableLearnset,
@@ -10019,7 +10011,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_Tentacruel,
         .shinyPalette = gMonShinyPalette_Tentacruel,
-        .shinyPaletteModern = gMonShinyPaletteModern_Tentacruel,
         .iconSprite = gMonIcon_Tentacruel,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 2 : 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -10032,8 +10023,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_BUG,
             sAnimTable_Following,
             gOverworldPalette_Tentacruel,
-            gShinyOverworldPalette_Tentacruel,
-            gShinyModernOverworldPalette_Tentacruel
+            gShinyOverworldPalette_Tentacruel
         )
         .levelUpLearnset = sTentacruelLevelUpLearnset,
         .teachableLearnset = sTentacruelTeachableLearnset,
@@ -10942,6 +10932,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_DIP_RIGHT_SIDE,
         .palette = gMonPalette_Slowbro,
         .shinyPalette = gMonShinyPalette_Slowbro,
+        .shinyPaletteModern = gShinyPaletteModern_Slowbro,
         .iconSprite = gMonIcon_Slowbro,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -10954,7 +10945,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Slowbro,
-            gShinyOverworldPalette_Slowbro
+            gShinyOverworldPalette_Slowbro,
+            gOverworldPalette_Slowbro
         )
         .levelUpLearnset = sSlowbroLevelUpLearnset,
         .teachableLearnset = sSlowbroTeachableLearnset,
@@ -11656,7 +11648,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_H_SLIDE,
         .palette = gMonPalette_Farfetchd,
         .shinyPalette = gMonShinyPalette_Farfetchd,
-        .shinyPaletteModern = gMonShinyPaletteModern_Farfetchd,
         .iconSprite = gMonIcon_Farfetchd,
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -11669,8 +11660,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_NONE,
             sAnimTable_Following_Asym,
             gOverworldPalette_Farfetchd,
-            gShinyOverworldPalette_Farfetchd,
-            gShinyModernOverworldPalette_Farfetchd
+            gShinyOverworldPalette_Farfetchd
         )
         .isSkyBattleBanned = B_SKY_BATTLE_STRICT_ELIGIBILITY,
         .levelUpLearnset = sFarfetchdLevelUpLearnset,
@@ -12751,7 +12741,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_H_VIBRATE,
         .palette = gMonPalette_Haunter,
         .shinyPalette = gMonShinyPalette_Haunter,
-        .shinyPaletteModern = gMonShinyPaletteModern_Haunter,
         .iconSprite = gMonIcon_Haunter,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -12764,8 +12753,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_NONE,
             sAnimTable_Following,
             gOverworldPalette_Haunter,
-            gShinyOverworldPalette_Haunter,
-            gShinyModernOverworldPalette_Haunter
+            gShinyOverworldPalette_Haunter
         )
         .levelUpLearnset = sHaunterLevelUpLearnset,
         .teachableLearnset = sHaunterTeachableLearnset,
@@ -12836,7 +12824,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
         .palette = gMonPalette_Gengar,
         .shinyPalette = gMonShinyPalette_Gengar,
-        .shinyPaletteModern = gMonShinyPaletteModern_Gengar,
         .iconSprite = gMonIcon_Gengar,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -12849,8 +12836,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Gengar,
-            gShinyOverworldPalette_Gengar,
-            gShinyModernOverworldPalette_Gengar
+            gShinyOverworldPalette_Gengar
         )
         .levelUpLearnset = sGengarLevelUpLearnset,
         .teachableLearnset = sGengarTeachableLearnset,
@@ -14058,6 +14044,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
         .palette = gMonPalette_Exeggutor,
         .shinyPalette = gMonShinyPalette_Exeggutor,
+        .shinyPaletteModern = gShinyPaletteModern_Exeggutor,
         .iconSprite = gMonIcon_Exeggutor,
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -14070,7 +14057,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Exeggutor,
-            gShinyOverworldPalette_Exeggutor
+            gShinyOverworldPalette_Exeggutor,
+            gOverworldPalette_Exeggutor
         )
         .levelUpLearnset = sExeggutorLevelUpLearnset,
         .teachableLearnset = sExeggutorTeachableLearnset,
@@ -14293,7 +14281,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_CONCAVE_ARC_LARGE,
         .palette = gMonPalette_Marowak,
         .shinyPalette = gMonShinyPalette_Marowak,
-        .shinyPaletteModern = gMonShinyPaletteModern_Marowak,
         .iconSprite = gMonIcon_Marowak,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -14306,8 +14293,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following_Asym,
             gOverworldPalette_Marowak,
-            gShinyOverworldPalette_Marowak,
-            gShinyModernOverworldPalette_Marowak
+            gShinyOverworldPalette_Marowak
         )
         .levelUpLearnset = sMarowakLevelUpLearnset,
         .teachableLearnset = sMarowakTeachableLearnset,
@@ -16954,7 +16940,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_TRIANGLE_DOWN,
         .palette = gMonPalette_Scyther,
         .shinyPalette = gMonShinyPalette_Scyther,
-        .shinyPaletteModern = gMonShinyPaletteModern_Scyther,
         .iconSprite = gMonIcon_Scyther,
         .iconPalIndex = 1,
 #if P_GENDER_DIFFERENCES
@@ -16971,8 +16956,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Scyther,
-            gShinyOverworldPalette_Scyther,
-            gShinyModernOverworldPalette_Scyther
+            gShinyOverworldPalette_Scyther
         )
         OVERWORLD_FEMALE(
             sPicTable_ScytherF,
@@ -17430,7 +17414,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_H_SHAKE,
         .palette = gMonPalette_Elekid,
         .shinyPalette = gMonShinyPalette_Elekid,
-        .shinyPaletteModern = gMonShinyPaletteModern_Elekid,
         .iconSprite = gMonIcon_Elekid,
         .iconPalIndex = 1,
         .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
@@ -17443,8 +17426,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Elekid,
-            gShinyOverworldPalette_Elekid,
-            gShinyModernOverworldPalette_Elekid
+            gShinyOverworldPalette_Elekid
         )
         .levelUpLearnset = sElekidLevelUpLearnset,
         .teachableLearnset = sElekidTeachableLearnset,
@@ -18601,7 +18583,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
         .palette = gMonPalette_Lapras,
         .shinyPalette = gMonShinyPalette_Lapras,
-        .shinyPaletteModern = gMonShinyPaletteModern_Lapras,
+        .shinyPaletteModern = gShinyPaletteModern_Lapras,
         .iconSprite = gMonIcon_Lapras,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -18615,7 +18597,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             sAnimTable_Following,
             gOverworldPalette_Lapras,
             gShinyOverworldPalette_Lapras,
-            gShinyModernOverworldPalette_Lapras
+            gOverworldPalette_Lapras
         )
         .levelUpLearnset = sLaprasLevelUpLearnset,
         .teachableLearnset = sLaprasTeachableLearnset,
@@ -19063,7 +19045,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_SHAKE_GLOW_BLUE,
         .palette = gMonPalette_Vaporeon,
         .shinyPalette = gMonShinyPalette_Vaporeon,
-        .shinyPaletteModern = gMonShinyPaletteModern_Vaporeon,
         .iconSprite = gMonIcon_Vaporeon,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -19076,8 +19057,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Vaporeon,
-            gShinyOverworldPalette_Vaporeon,
-            gShinyModernOverworldPalette_Vaporeon
+            gShinyOverworldPalette_Vaporeon
         )
         .levelUpLearnset = sVaporeonLevelUpLearnset,
         .teachableLearnset = sVaporeonTeachableLearnset,
@@ -19131,7 +19111,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_SHAKE_FLASH_YELLOW,
         .palette = gMonPalette_Jolteon,
         .shinyPalette = gMonShinyPalette_Jolteon,
-        .shinyPaletteModern = gMonShinyPaletteModern_Jolteon,
         .iconSprite = gMonIcon_Jolteon,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 0 : 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -19144,8 +19123,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Jolteon,
-            gShinyOverworldPalette_Jolteon,
-            gShinyModernOverworldPalette_Jolteon
+            gShinyOverworldPalette_Jolteon
         )
         .levelUpLearnset = sJolteonLevelUpLearnset,
         .teachableLearnset = sJolteonTeachableLearnset,
@@ -19199,7 +19177,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_SHAKE_GLOW_RED,
         .palette = gMonPalette_Flareon,
         .shinyPalette = gMonShinyPalette_Flareon,
-        .shinyPaletteModern = gMonShinyPaletteModern_Flareon,
         .iconSprite = gMonIcon_Flareon,
         .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 0 : 3,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -19212,8 +19189,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Flareon,
-            gShinyOverworldPalette_Flareon,
-            gShinyModernOverworldPalette_Flareon
+            gShinyOverworldPalette_Flareon
         )
         .levelUpLearnset = sFlareonLevelUpLearnset,
         .teachableLearnset = sFlareonTeachableLearnset,
@@ -20686,7 +20662,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_SHAKE_FLASH_YELLOW,
         .palette = gMonPalette_Zapdos,
         .shinyPalette = gMonShinyPalette_Zapdos,
-        .shinyPaletteModern = gMonShinyPaletteModern_Zapdos,
         .iconSprite = gMonIcon_Zapdos,
         .iconPalIndex = 0,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -20699,8 +20674,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_NONE,
             sAnimTable_Following,
             gOverworldPalette_Zapdos,
-            gShinyOverworldPalette_Zapdos,
-            gShinyModernOverworldPalette_Zapdos
+            gShinyOverworldPalette_Zapdos
         )
         .isSubLegendary = TRUE,
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
@@ -21180,7 +21154,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .backAnimId = BACK_ANIM_V_SHAKE,
         .palette = gMonPalette_Dragonite,
         .shinyPalette = gMonShinyPalette_Dragonite,
-        .shinyPaletteModern = gMonShinyPaletteModern_Dragonite,
         .iconSprite = gMonIcon_Dragonite,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -21193,8 +21166,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
             TRACKS_NONE,
             sAnimTable_Following,
             gOverworldPalette_Dragonite,
-            gShinyOverworldPalette_Dragonite,
-            gShinyModernOverworldPalette_Dragonite
+            gShinyOverworldPalette_Dragonite
         )
         .levelUpLearnset = sDragoniteLevelUpLearnset,
         .teachableLearnset = sDragoniteTeachableLearnset,

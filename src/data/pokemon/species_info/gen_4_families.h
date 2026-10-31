@@ -5256,6 +5256,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .backAnimId = BACK_ANIM_V_SHAKE_H_SLIDE,
         .palette = gMonPalette_Drapion,
         .shinyPalette = gMonShinyPalette_Drapion,
+        .shinyPaletteModern = gShinyPaletteModern_Drapion,
         .iconSprite = gMonIcon_Drapion,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
@@ -5268,7 +5269,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
             TRACKS_FOOT,
             sAnimTable_Following,
             gOverworldPalette_Drapion,
-            gShinyOverworldPalette_Drapion
+            gShinyOverworldPalette_Drapion,
+            gOverworldPalette_Drapion
         )
         .levelUpLearnset = sDrapionLevelUpLearnset,
         .teachableLearnset = sDrapionTeachableLearnset,

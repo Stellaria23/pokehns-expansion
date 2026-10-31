@@ -2472,12 +2472,9 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .levelUpLearnset = sApplinLevelUpLearnset,
         .teachableLearnset = sApplinTeachableLearnset,
         .eggMoveLearnset = sApplinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_FLAPPLE},
-                                {EVO_ITEM, ITEM_SUN_STONE, SPECIES_APPLETUN},
-                                {EVO_ITEM, ITEM_TART_APPLE, SPECIES_FLAPPLE},
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_TART_APPLE, SPECIES_FLAPPLE},
                                 {EVO_ITEM, ITEM_SWEET_APPLE, SPECIES_APPLETUN}
                             #if P_GEN_9_CROSS_EVOS
-                                ,{EVO_ITEM, ITEM_OVAL_STONE, SPECIES_DIPPLIN}
                                 ,{EVO_ITEM, ITEM_SYRUPY_APPLE, SPECIES_DIPPLIN}
                             #endif
                             ),
@@ -4847,15 +4844,6 @@ const struct SpeciesInfo gSpeciesInfoGen8[] =
         .teachableLearnset = sMilceryTeachableLearnset,
         .eggMoveLearnset = sMilceryEggMoveLearnset,
         .evolutions = EVOLUTION(
-                                {EVO_ITEM, ITEM_SHINY_STONE,   SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM},
-                                {EVO_ITEM, ITEM_FIRE_STONE,    SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM},
-                                {EVO_ITEM, ITEM_LEAF_STONE,    SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM},
-                                {EVO_ITEM, ITEM_ICE_STONE,     SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM},
-                                {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM},
-                                {EVO_ITEM, ITEM_MOON_STONE,    SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM},
-                                {EVO_ITEM, ITEM_DUSK_STONE,    SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL},
-                                {EVO_ITEM, ITEM_SUN_STONE,     SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL},
-                                {EVO_ITEM, ITEM_DAWN_STONE,    SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL},
                                 {EVO_SPIN, SPIN_CW_SHORT, SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM,
                                 CONDITIONS({IF_HOLD_ITEM, ITEM_STRAWBERRY_SWEET},
                                            {IF_TIME, TIME_DAY})},

@@ -8,10 +8,22 @@ ChallengePlaza_hns_SageTrainer::
 	goto_if_eq VAR_SAGE_TRAINER, 1, ChallengePlaza_hns_SageTrainer_1
 	goto_if_eq VAR_SAGE_TRAINER, 2, ChallengePlaza_hns_SageTrainer_2
 	goto_if_eq VAR_SAGE_TRAINER, 3, ChallengePlaza_hns_SageTrainer_3
+	goto_if_eq VAR_SAGE_TRAINER, 4, ChallengePlaza_hns_SageTrainer_4
 	msgbox ChallengePlaza_hns_Text_SageTrainer_SomethingNew, MSGBOX_DEFAULT
 	release
 	end
 
+
+ChallengePlaza_hns_SageTrainer_4::
+	msgbox ChallengePlaza_hns_Text_Over, MSGBOX_DEFAULT
+	release
+	end
+
+ChallengePlaza_hns_Text_Over:
+	.string "I hear there are MOéMON\n"
+	.string "hanging around here at night.\p"
+	.string "I ususally never stay here late,\l"
+	.string "so I've never seen them.$"
 
 ChallengePlaza_hns_SageTrainer_0::
 	msgbox ChallengePlaza_hns_Text_SageTrainer_0_Intro, MSGBOX_DEFAULT
@@ -64,12 +76,7 @@ ChallengePlaza_hns_SageTrainer_2_Battle::
 	trainerbattle_no_intro TRAINER_SAGE_TRAINER_2_HNS, ChallengePlaza_hns_Text_SageTrainer_1_BattleEnd
 	setvar VAR_SAGE_TRAINER, 3
 	msgbox ChallengePlaza_hns_Text_SageTrainer_2_AfterBattle1, MSGBOX_DEFAULT
-	fadescreen FADE_TO_BLACK
-	msgbox ChallengePlaza_hns_Text_SageTrainer_Ellipsis, MSGBOX_DEFAULT
-	closemessage
-	setflag FLAG_PARTY_RELEARNER_HNS
-	delay 16
-	fadescreen FADE_FROM_BLACK
+	giveitem ITEM_BIG_NUGGET
 	msgbox ChallengePlaza_hns_Text_SageTrainer_2_AfterBattle2, MSGBOX_DEFAULT
 	release
 	end
@@ -97,6 +104,8 @@ ChallengePlaza_hns_SageTrainer_3_Battle::
 	setflag FLAG_MEGA_RING_GET_HNS
 	giveitem ITEM_MEGA_RING
 	msgbox ChallengePlaza_hns_Text_SageTrainer_3_AfterBattle2, MSGBOX_DEFAULT
+	giveitem ITEM_POKE_RADAR
+	msgbox ChallengePlaza_hns_Text_SageTrainer_3_AfterBattle3, MSGBOX_DEFAULT
 	release
 	end
 
@@ -539,15 +548,15 @@ ChallengePlaza_hns_Text_SageTrainer_2_AfterBattle1:
 	.string "Ahem. Young TRAINER.\p"
 	.string "You have shown a great amount\n"
 	.string "of effort during this battle!\p"
-	.string "As a reward, I bestow you my\n"
-	.string "knowledge.$"
+	.string "As a reward, I bestow you...\p"
+	.string "Uh...\p"
+	.string "...Just take this.$"
 
 ChallengePlaza_hns_Text_SageTrainer_2_AfterBattle2:
-	.string "Alright, now you can\n"
-	.string "teach your MOéMON moves\l"
-	.string "they've already learned.\p"
-	.string "You now have the strength to\n"
-	.string "become a CHAMPION. Fight on!$"
+	.string "I swear, I'll get something\n"
+	.string "better next time...\p"
+	.string "Anyway, you should be strong\n"
+	.string "enough to defeat the CHAMPION now$"
 
 ChallengePlaza_hns_Text_SageTrainer_2_TooManyMons:
 	.string "Then it's... Huh?\p"
@@ -583,7 +592,14 @@ ChallengePlaza_hns_Text_SageTrainer_3_AfterBattle2:
 	.string "and you'll need the associated\l"
 	.string "MEGA STONES with it.\p"
 	.string "I didn't have any with me, so\n"
-	.string "it's kind of useless to me.$"
+	.string "it's kind of useless to me.\p"
+	.string "Oh, also, take this.$"
+
+ChallengePlaza_hns_Text_SageTrainer_3_AfterBattle3:
+	.string "This item is supposed to\n"
+	.string "let you find rare MOéMON, but\l"
+	.string "I haven't had any luck with it.\l"
+	.string "Maybe you'll be luckier than me.$"
 
 ChallengePlaza_hns_Text_SageTrainer_3_MegaRing:
 	.string "{PLAYER} obtained the MEGA RING.$"
@@ -666,5 +682,6 @@ ChallengePlaza_hns_PolitoedShop::
 	.2byte ITEM_APICOT_BERRY
 	.2byte ITEM_LANSAT_BERRY
 	.2byte ITEM_MICLE_BERRY
+	.2byte ITEM_NONE
 	release
 	end

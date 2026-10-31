@@ -28,6 +28,7 @@
 #include "config/overworld.h"
 #include "config/pokemon.h"
 #include "config/summary_screen.h"
+#include "config/wild_encounter.h"
 
 // Invalid Versions show as "----------" in Gen 4 and Gen 5's summary screen.
 // In Gens 6 and 7, invalid versions instead show "a distant land" in the summary screen.
@@ -112,7 +113,7 @@ enum Language
 #define SAVED_TRENDS_COUNT 5
 #define PYRAMID_BAG_ITEMS_COUNT 10
 #if IS_HNS
-#define ROAMER_COUNT 4
+#define ROAMER_COUNT 8
 #else
 #define ROAMER_COUNT 1
 #endif

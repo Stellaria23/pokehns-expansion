@@ -17,6 +17,7 @@ bool8 TryAddRoamer(u16 species, u8 level, u8 locationTableId);
 void MoveAllRoamersToOtherLocationSets(void);
 void MoveAllRoamers(void);
 void TryShowRoamerFlash(void);
+void AddRoamer(void);
 
 extern u8 gEncounteredRoamerIndex;
 

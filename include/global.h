@@ -338,6 +338,7 @@ struct ChallengeSettings
     u8 tx_Features_FrontierBans:1;
     u8 tx_Difficulty_EscapeRopeDig:1;
     u8 tx_Features_ShinyChance:4;
+    u8 overworldEncounterMode:1; // 0 = overworld encounters, 1 = vanilla
 };
 
 struct PokeRide
@@ -1290,7 +1291,7 @@ struct SaveBlock1
     /*0x31B3*/ struct ExternalEventData externalEventData;
     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
     /*0x31DC*/ struct Roamer roamer[ROAMER_COUNT];
-    /*0x3???*/ struct Roamer roamerPadding[7 - ROAMER_COUNT]; // Padding for extra roamers
+    /*0x3???*/ struct Roamer roamerPadding[9 - ROAMER_COUNT]; // Padding for extra roamers
 #if FREE_ENIGMA_BERRY == FALSE
     /*0x31F8*/ struct EnigmaBerry enigmaBerry;
 #endif //FREE_ENIGMA_BERRY
