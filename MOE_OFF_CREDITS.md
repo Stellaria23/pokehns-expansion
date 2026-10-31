@@ -1,0 +1,42 @@
+# Sprite credits
+- McMagister
+- Cornbread
+- BlizzWhite
+- toot
+- Kiri
+- Arez Vii
+- RED
+- Orange
+- TKMO
+- ZX2019
+- Nerak55
+- Master Rumi
+- fuwu
+- Rache
+- Cookie
+- lcsiang
+- Manor
+- Danagi
+- Galevayu
+- ArmoredCat
+- Infinity X
+- Kurisu
+- Mars
+- MAGNEMITEY
+- LeBinPasta
+- Jackpot
+- Kana
+- Queso
+- LK
+
+# Icon credits
+- Nerak55
+- rat enjoyer
+- Orange
+- BrownBaggy
+- Anonymous
+- BlizzWhite
+- Cookie
+- MrLagger
+- Kana
+- LK
