@@ -30,6 +30,7 @@ NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger1::
 	setvar VAR_NEWBARK_TOWN_STATE, 1
 	setflag FLAG_SET_WALL_CLOCK
 	helpwindow HELP_GAMESTART_WINDOW
+	helpwindow HELP_AA_DISCLAIMER
 	releaseall
 	end
 
@@ -46,6 +47,7 @@ NewBarkTown_PlayersHouse_2F_Script_ClockSetupTrigger2::
 	setvar VAR_NEWBARK_TOWN_STATE, 1
 	setflag FLAG_SET_WALL_CLOCK
 	helpwindow HELP_GAMESTART_WINDOW
+	helpwindow HELP_AA_DISCLAIMER
 	releaseall
 	end
 

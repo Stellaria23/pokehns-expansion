@@ -42848,12 +42848,12 @@
               {
                 "min_level": 14,
                 "max_level": 14,
-                "species": "SPECIES_SCATTERBUG"
+                "species": "SPECIES_SCATTERBUG_SAVANNA"
               },
               {
                 "min_level": 15,
                 "max_level": 15,
-                "species": "SPECIES_SPEWPA"
+                "species": "SPECIES_SPEWPA_SAVANNA"
               },
               {
                 "min_level": 10,

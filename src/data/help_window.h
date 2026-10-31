@@ -34,7 +34,7 @@ const struct HelpWindow gHelpWindowInfo[] =
         .desc = COMPOUND_STRING("Attempting to link incorrectly may result\n"
                                 "in permanent damage to your save file.\n"
                                 "Only link with another player if:\n"
-                                "You are both playing Heart & Soul.\n"
+                                "You are both playing Aurum & Argent.\n"
                                 "You are both on the same version.\n"
                                 "You both have the same challenge settings.\n"
                                 "You are NOT using any randomizer settings."
@@ -189,6 +189,18 @@ const struct HelpWindow gHelpWindowInfo[] =
         .headerFont = FONT_NORMAL,
         .descFont = FONT_SMALL,
         .headerColor = {0, 8, 3},
+    },
+    [HELP_AA_DISCLAIMER] =
+    {
+        .header = COMPOUND_STRING("NOTE ABOUT THIS GAME"),
+        .desc = COMPOUND_STRING("The game you're about to play is not\n"
+                                "Pokémon Heart & Soul, so please\n"
+                                "do not ask the Heart & Soul devs about\n"
+                                "any bugs found here. Anyway, have fun."
+                            ),
+        .headerFont = FONT_NORMAL,
+        .descFont = FONT_SMALL,
+        .headerColor = {0, 4, 5},
     }
     // Add more entries
 };
